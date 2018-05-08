@@ -1,0 +1,65 @@
+<form class="specification">
+  <mat-form-field>
+    <mat-select placeholder="Specification" name="fileName" [value]="fileName$ | async" (selectionChange)="fileName$.next($event.value)">
+      <mat-option [value]="'websocket'">WebSocket</mat-option>
+      <mat-option [value]="'restapi'">RestApi</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+<mat-tab-group *ngIf="messages$ | async as messages">
+  <ng-container *ngFor="let message of messages">
+    <mat-tab [label]="message.name">
+      <ng-template matTabContent>
+        <mat-card class="example-card shadowed">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"><mat-icon color="primary">{{message.icon}}</mat-icon></div>
+            <mat-card-title>{{message.name}}</mat-card-title>
+            <mat-card-subtitle>{{message.description}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-accordion class="example-headers-align">
+              <mat-expansion-panel [expanded]="false" *ngFor="let example of message.examples">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <mat-chip-list>
+                      <mpgp-chip [verb]="example.verb"></mpgp-chip>
+                      {{example.name}}
+                    </mat-chip-list>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{example.summary}}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>{{example.description}}</p>
+                <mat-tab-group [selectedIndex]="isNotEmpty(example.clientMessage) ? 1 : 0">
+                  <mat-tab label="FIELDS" *ngIf="isNotEmpty(example.fields)">
+                    <mpgp-fields [fields]="example.fields"></mpgp-fields>
+                  </mat-tab>
+                  <mat-tab label="EXAMPLE" *ngIf="isNotEmpty(example.clientMessage)">
+                    <mpgp-code [jsonData]="example.clientMessage"></mpgp-code>
+                  </mat-tab>
+                  <mat-tab label="SUCCESS" *ngIf="isNotEmpty(example.serverMessage.success)">
+                    <mat-chip-list>
+                      <mat-chip color="accent" selected="true">{{example.serverMessage.success.status}}</mat-chip>
+                      {{example.serverMessage.success.description}}
+                    </mat-chip-list>
+                    <mpgp-code [jsonData]="example.serverMessage.success.data"></mpgp-code>
+                  </mat-tab>
+                  <mat-tab label="ERROR" *ngIf="example.serverMessage.errors.length">
+                    <div *ngFor="let error of example.serverMessage.errors">
+                      <mat-chip-list>
+                        <mat-chip color="warn" selected="true">{{error.status}}</mat-chip>
+                        {{error.description}}
+                      </mat-chip-list>
+                      <mpgp-code [jsonData]="error.data"></mpgp-code>
+                    </div>
+                  </mat-tab>
+                </mat-tab-group>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </mat-card-content>
+        </mat-card>
+      </ng-template>
+    </mat-tab>
+  </ng-container>
+</mat-tab-group>
