@@ -95,7 +95,7 @@
         "name":"avatar",
         "type":"string",
         "description":"",
-        "required":true,
+        "required":false,
         "validators":[
           {"name":"maxLength","value":249}
         ]
@@ -103,7 +103,7 @@
         "name":"languages",
         "type":"string",
         "description":"",
-        "required":true,
+        "required":false,
         "validators":[
           {"name":"maxLength","value":249}
         ]
@@ -121,7 +121,7 @@
         "name":"nickname",
         "type":"string",
         "description":"",
-        "required":true,
+        "required":false,
         "validators":[
           {"name":"maxLength","value":16},
           {"name":"minLength","value":3},
@@ -149,7 +149,7 @@
         "name":"statusInfo",
         "type":"string",
         "description":"",
-        "required":true,
+        "required":false,
         "validators":[
           {"name":"maxLength","value":249}
         ]
