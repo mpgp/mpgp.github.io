@@ -1,14 +1,22 @@
-<form class="specification">
-  <mat-form-field>
-    <mat-select placeholder="Specification" name="fileName" [value]="fileName$ | async" (selectionChange)="fileName$.next($event.value)">
-      <mat-option [value]="'websocket'">WebSocket</mat-option>
-      <mat-option [value]="'restapi'">RestApi</mat-option>
-    </mat-select>
-  </mat-form-field>
-</form>
-<mat-tab-group *ngIf="messages$ | async as messages">
-  <ng-container *ngFor="let message of messages">
-    <mat-tab [label]="message.name">
+<ng-container *ngIf="route.params | async as params">
+  <form class="specification">
+    <mat-form-field>
+      <mat-select
+          placeholder="Specification" name="specification"
+          [value]="params.specification"
+          (selectionChange)="router.navigate(['/examples', $event.value,  0, 0, 0])"
+      >
+        <mat-option [value]="'websocket'">WebSocket</mat-option>
+        <mat-option [value]="'restapi'">RestApi</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <mat-tab-group
+      [selectedIndex]="params.module"
+      (selectedIndexChange)="router.navigate(['/examples', params.specification, $event, 0, 0])"
+      *ngIf="messages$ | async as messages"
+    >
+    <mat-tab [label]="message.name" *ngFor="let message of messages">
       <ng-template matTabContent>
         <mat-card class="example-card shadowed">
           <mat-card-header>
@@ -18,7 +26,11 @@
           </mat-card-header>
           <mat-card-content>
             <mat-accordion class="example-headers-align">
-              <mat-expansion-panel [expanded]="false" *ngFor="let example of message.examples">
+              <mat-expansion-panel
+                  [expanded]="params.action == idx"
+                  (opened)="router.navigate(['/examples', params.specification, params.module, idx, params.tab])"
+                  *ngFor="let example of message.examples;let idx = index"
+              >
                 <mat-expansion-panel-header>
                   <mat-panel-title>
                     <mat-chip-list>
@@ -31,7 +43,10 @@
                   </mat-panel-description>
                 </mat-expansion-panel-header>
                 <p>{{example.description}}</p>
-                <mat-tab-group [selectedIndex]="isNotEmpty(example.clientMessage) ? 1 : 0">
+                <mat-tab-group
+                    [selectedIndex]="params.tab"
+                    (selectedIndexChange)="router.navigate(['/examples', params.specification, params.module, params.action, $event])"
+                >
                   <mat-tab label="FIELDS" *ngIf="isNotEmpty(example.fields)">
                     <mpgp-fields [fields]="example.fields"></mpgp-fields>
                   </mat-tab>
@@ -40,18 +55,25 @@
                   </mat-tab>
                   <mat-tab label="SUCCESS" *ngIf="isNotEmpty(example.serverMessage.success)">
                     <mat-chip-list>
-                      <mat-chip color="accent" selected="true">{{example.serverMessage.success.status}}</mat-chip>
+                      <mat-chip color="accent" selected="true" *ngIf="example.serverMessage.success.status">
+                        {{example.serverMessage.success.status}}
+                      </mat-chip>
                       {{example.serverMessage.success.description}}
                     </mat-chip-list>
                     <mpgp-code [jsonData]="example.serverMessage.success.data"></mpgp-code>
                   </mat-tab>
                   <mat-tab label="ERROR" *ngIf="example.serverMessage.errors.length">
-                    <div *ngFor="let error of example.serverMessage.errors">
+                    <div *ngFor="let error of example.serverMessage.errors; let last = last">
                       <mat-chip-list>
-                        <mat-chip color="warn" selected="true">{{error.status}}</mat-chip>
+                        <mat-chip color="warn" selected="true" *ngIf="error.status">{{error.status}}</mat-chip>
                         {{error.description}}
                       </mat-chip-list>
                       <mpgp-code [jsonData]="error.data"></mpgp-code>
+                      <ng-container *ngIf="!last">
+                        <mat-divider></mat-divider>
+                        <mat-divider></mat-divider>
+                        <br />
+                      </ng-container>
                     </div>
                   </mat-tab>
                 </mat-tab-group>
@@ -61,5 +83,5 @@
         </mat-card>
       </ng-template>
     </mat-tab>
-  </ng-container>
-</mat-tab-group>
+  </mat-tab-group>
+</ng-container>

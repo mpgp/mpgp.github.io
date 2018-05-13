@@ -7,8 +7,10 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   imports: [
     ExamplesRoutingModule,
-    SharedModule
+    SharedModule,
   ],
-  declarations: [MainComponent]
+  declarations: [
+    MainComponent,
+  ]
 })
 export class ExamplesModule { }

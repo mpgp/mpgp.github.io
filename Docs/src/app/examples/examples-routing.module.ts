@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
-    { path: '', component: MainComponent }
+  { path: '', redirectTo: 'websocket/0/0/0', pathMatch: 'full' },
+  { path: ':specification/:module/:action/:tab', component: MainComponent }
 ];
 
 @NgModule({
