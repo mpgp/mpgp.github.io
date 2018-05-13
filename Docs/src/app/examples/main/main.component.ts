@@ -23,7 +23,6 @@ export class MainComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(x => console.warn(x));
     this.messages$ = this.route.params.pipe(
       map(({specification}) => specification),
 
