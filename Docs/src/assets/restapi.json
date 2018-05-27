@@ -44,7 +44,7 @@
         "description":"",
         "required":true,
         "validators":[
-          {"name":"maxLength","value":12},
+          {"name":"maxLength","value":20},
           {"name":"minLength","value":3},
           {"name":"pattern","value":"^[a-zA-Z0-9]+$"}
         ]
@@ -113,7 +113,7 @@
         "description":"",
         "required":true,
         "validators":[
-          {"name":"maxLength","value":12},
+          {"name":"maxLength","value":20},
           {"name":"minLength","value":3},
           {"name":"pattern","value":"^[a-zA-Z0-9]+$"}
         ]
@@ -123,7 +123,7 @@
         "description":"",
         "required":false,
         "validators":[
-          {"name":"maxLength","value":16},
+          {"name":"maxLength","value":20},
           {"name":"minLength","value":3},
           {"name":"pattern","value":"^([^\\s]+?\\s?[^\\s]+?)+?$"}
         ]
@@ -195,7 +195,7 @@
         "description":"",
         "required":true,
         "validators":[
-          {"name":"maxLength","value":32}
+          {"name":"maxLength","value":64}
         ]
       }],
       "clientMessage":{
