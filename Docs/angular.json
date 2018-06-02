@@ -36,6 +36,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref" : "/dist/",
+            "deployUrl": "/dist/",
             "outputPath": "../dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -61,6 +63,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref" : "/dist/",
+              "deployUrl": "/dist/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -68,7 +72,7 @@
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true
             }
           }

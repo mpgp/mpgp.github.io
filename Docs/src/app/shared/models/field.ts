@@ -13,7 +13,8 @@ export class Field {
       this.name = json.name || '';
       this.required = json.required || false;
       this.type = json.type || '';
-      this.validators = (json.validators && json.validators.map(x => new FieldValidator(x.name, x.value))) || [new FieldValidator('minValue', 1), new FieldValidator('maxValue', 10)];
+      this.validators = (json.validators && json.validators.map(x => new FieldValidator(x.name, x.value)))
+        || [new FieldValidator('minValue', 1), new FieldValidator('maxValue', 10)];
     } else {
       this.description = 'A description for anyField.';
       this.name = 'anyField';

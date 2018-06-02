@@ -9,12 +9,12 @@ export class ServerMessageResponse {
       this.data = json.data || {};
       this.status = json.status || null;
     } else {
-      this.description = "Some success message.";
+      this.description = 'Some success message.';
       this.data = {
-        "type":"ANY_MESSAGE_FOR_EXAMPLE",
-        "status":"SUCCESS",
-        "payload":{
-          "anyServerData":"hello"
+        'type': 'ANY_MESSAGE_FOR_EXAMPLE',
+        'status': 'SUCCESS',
+        'payload': {
+          'anyServerData': 'hello'
         }
       };
     }
