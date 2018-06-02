@@ -1,13 +1,15 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 
+import { Field } from '../models/field';
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'mpgp-fields',
+  selector: 'app-fields',
+  styleUrls: ['./fields.component.scss'],
   templateUrl: './fields.component.html',
-  styleUrls: ['./fields.component.scss']
 })
 export class FieldsComponent {
   @Input()
-  public fields: any[];
+  public fields: Field[];
 }

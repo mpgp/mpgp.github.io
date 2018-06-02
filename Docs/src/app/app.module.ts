@@ -1,15 +1,15 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatDividerModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
   ],
@@ -28,6 +28,5 @@ import { AppComponent } from './app.component';
   providers: [
 
   ],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }

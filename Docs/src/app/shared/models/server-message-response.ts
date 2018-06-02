@@ -1,9 +1,9 @@
 export class ServerMessageResponse {
-  public data: any;
+  public data: object;
   public description: string;
   public status?: number;
 
-  constructor(json: any = null) {
+  constructor(json: ServerMessageResponse = null) {
     if (json) {
       this.description = json.description || '';
       this.data = json.data || {};
@@ -11,11 +11,11 @@ export class ServerMessageResponse {
     } else {
       this.description = 'Some success message.';
       this.data = {
-        'type': 'ANY_MESSAGE_FOR_EXAMPLE',
-        'status': 'SUCCESS',
         'payload': {
-          'anyServerData': 'hello'
-        }
+          'anyServerData': 'hello',
+        },
+        'status': 'SUCCESS',
+        'type': 'ANY_MESSAGE_FOR_EXAMPLE',
       };
     }
   }

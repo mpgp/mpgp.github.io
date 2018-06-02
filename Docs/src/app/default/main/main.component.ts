@@ -3,8 +3,8 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'mpgp-main',
+  selector: 'app-main',
+  styleUrls: ['./main.component.scss'],
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
 })
 export class MainComponent { }

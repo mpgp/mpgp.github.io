@@ -6,7 +6,7 @@ export class Message {
   public icon: string;
   public name: string;
 
-  constructor(json: any = null) {
+  constructor(json: Message = null) {
    if (json) {
     this.description = json.description || '';
     this.examples = (json.examples && json.examples.map(x => new MessageExample(x))) || [new MessageExample()];

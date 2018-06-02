@@ -9,8 +9,9 @@ if (environment.production) {
 }
 
 const bootstrapOptions = [{
-  defaultEncapsulation: ViewEncapsulation.None
+  defaultEncapsulation: ViewEncapsulation.None,
 }];
 
-platformBrowserDynamic().bootstrapModule(AppModule, bootstrapOptions)
-  .catch(err => console.log(err));
+platformBrowserDynamic()
+  .bootstrapModule(AppModule, bootstrapOptions)
+  .catch(err => console.error(err));

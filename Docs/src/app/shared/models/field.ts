@@ -7,7 +7,7 @@ export class Field {
   public type: string;
   public validators: FieldValidator[];
 
-  constructor(json: any = null) {
+  constructor(json: Field = null) {
     if (json) {
       this.description = json.description || '';
       this.name = json.name || '';
@@ -23,7 +23,7 @@ export class Field {
       this.validators = [
         new FieldValidator('maxLength', 12),
         new FieldValidator('minLength', 3),
-        new FieldValidator('pattern', '^[a-zA-Z 0-9]+$')
+        new FieldValidator('pattern', '^[a-zA-Z 0-9]+$'),
       ];
     }
   }

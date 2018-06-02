@@ -3,11 +3,11 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'mpgp-code',
+  selector: 'app-code',
+  styleUrls: ['./code.component.scss'],
   templateUrl: './code.component.html',
-  styleUrls: ['./code.component.scss']
 })
 export class CodeComponent {
   @Input()
-  public jsonData: any;
+  public jsonData: object;
 }

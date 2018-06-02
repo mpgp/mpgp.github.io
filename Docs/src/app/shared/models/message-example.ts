@@ -2,7 +2,7 @@ import { Field } from './field';
 import { ServerMessage } from './server-message';
 
 export class MessageExample {
-  public clientMessage: any;
+  public clientMessage: object;
   public description: string;
   public fields: Field[];
   public name: string;
@@ -10,7 +10,7 @@ export class MessageExample {
   public summary: string;
   public verb?: string;
 
-  constructor(json: any = null) {
+  constructor(json: MessageExample = null) {
     if (json) {
       this.description = json.description || '';
       this.fields = (json.fields && json.fields.map(x => new Field(x))) || [new Field()];
@@ -25,11 +25,11 @@ export class MessageExample {
       this.name = 'ANY_MESSAGE_FOR_EXAMPLE';
       this.summary = 'Here are the basic data of messages.';
       this.clientMessage = {
-        type: 'ANY_MESSAGE_FOR_EXAMPLE',
         payload: {
           anyField: 'Any Value',
-          nonRequiredField: 42
-        }
+          nonRequiredField: 42,
+        },
+        type: 'ANY_MESSAGE_FOR_EXAMPLE',
       };
       this.serverMessage = new ServerMessage();
     }

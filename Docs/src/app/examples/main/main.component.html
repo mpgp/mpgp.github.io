@@ -34,7 +34,7 @@
                 <mat-expansion-panel-header>
                   <mat-panel-title>
                     <mat-chip-list>
-                      <mpgp-chip [verb]="example.verb"></mpgp-chip>
+                      <app-chip [verb]="example.verb"></app-chip>
                       {{example.name}}
                     </mat-chip-list>
                   </mat-panel-title>
@@ -48,10 +48,10 @@
                     (selectedIndexChange)="router.navigate(['/examples', params.specification, params.module, params.action, $event])"
                 >
                   <mat-tab label="FIELDS" *ngIf="isNotEmpty(example.fields)">
-                    <mpgp-fields [fields]="example.fields"></mpgp-fields>
+                    <app-fields [fields]="example.fields"></app-fields>
                   </mat-tab>
                   <mat-tab label="EXAMPLE" *ngIf="isNotEmpty(example.clientMessage)">
-                    <mpgp-code [jsonData]="example.clientMessage"></mpgp-code>
+                    <app-code [jsonData]="example.clientMessage"></app-code>
                   </mat-tab>
                   <mat-tab label="SUCCESS" *ngIf="isNotEmpty(example.serverMessage.success)">
                     <mat-chip-list>
@@ -60,7 +60,7 @@
                       </mat-chip>
                       {{example.serverMessage.success.description}}
                     </mat-chip-list>
-                    <mpgp-code [jsonData]="example.serverMessage.success.data"></mpgp-code>
+                    <app-code [jsonData]="example.serverMessage.success.data"></app-code>
                   </mat-tab>
                   <mat-tab label="ERROR" *ngIf="example.serverMessage.errors.length">
                     <div *ngFor="let error of example.serverMessage.errors; let last = last">
@@ -68,7 +68,7 @@
                         <mat-chip color="warn" selected="true" *ngIf="error.status">{{error.status}}</mat-chip>
                         {{error.description}}
                       </mat-chip-list>
-                      <mpgp-code [jsonData]="error.data"></mpgp-code>
+                      <app-code [jsonData]="error.data"></app-code>
                       <ng-container *ngIf="!last">
                         <mat-divider></mat-divider>
                         <mat-divider></mat-divider>

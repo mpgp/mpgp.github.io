@@ -4,28 +4,31 @@ export class ServerMessage {
   public errors: ServerMessageResponse[];
   public success: ServerMessageResponse;
 
-  constructor(json: any = null) {
-    const errors = [{
-      'description': 'If the message type isn\'t registered.',
-      'data': {
-        'type': 'MESSAGE',
-        'status': 'ERROR',
-        'error': {
-          'errorCode': 400,
-          'message': 'Bad request'
-        }
-      }
-    }, {
-      'description': 'If you isn\'t authorized yet.',
-      'data': {
-        'type': 'ANY_MESSAGE_FOR_EXAMPLE',
-        'status': 'ERROR',
-        'error': {
-          'errorCode': 401,
-          'message': 'Unauthorized'
-        }
-      }
-    }];
+  constructor(json: ServerMessage = null) {
+    const errors = [
+      {
+        'data': {
+          'error': {
+            'errorCode': 400,
+            'message': 'Bad request',
+          },
+          'status': 'ERROR',
+          'type': 'MESSAGE',
+        },
+        'description': 'If the message type isn\'t registered.',
+      },
+      {
+        'data': {
+          'error': {
+            'errorCode': 401,
+            'message': 'Unauthorized',
+          },
+          'status': 'ERROR',
+          'type': 'ANY_MESSAGE_FOR_EXAMPLE',
+        },
+        'description': 'If you isn\'t authorized yet.',
+      },
+    ];
 
     if (json) {
       this.success = json.success || new ServerMessageResponse();

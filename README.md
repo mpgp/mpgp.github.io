@@ -7,5 +7,5 @@ https://mpgp.github.io/
 
 ```sh
 npm i -g node-static
-static dist
+static .
 ```

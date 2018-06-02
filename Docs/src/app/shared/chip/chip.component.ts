@@ -3,23 +3,23 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'mpgp-chip',
+  selector: 'app-chip',
+  styleUrls: ['./chip.component.scss'],
   templateUrl: './chip.component.html',
-  styleUrls: ['./chip.component.scss']
 })
 export class ChipComponent {
   @Input()
   public verb: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD';
 
-  get isAccent() {
+  get isAccent(): boolean {
     return ['PATCH', 'PUT'].includes(this.verb);
   }
 
-  get isPrimary() {
+  get isPrimary(): boolean {
     return ['GET', 'POST'].includes(this.verb);
   }
 
-  get isWarn() {
+  get isWarn(): boolean {
     return ['DELETE', 'HEAD', 'OPTIONS'].includes(this.verb);
   }
 }
