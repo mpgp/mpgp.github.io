@@ -8,9 +8,11 @@ if (environment.production) {
   enableProdMode();
 }
 
-const bootstrapOptions = [{
-  defaultEncapsulation: ViewEncapsulation.None,
-}];
+const bootstrapOptions = [
+  {
+    defaultEncapsulation: ViewEncapsulation.None,
+  },
+];
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule, bootstrapOptions)

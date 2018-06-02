@@ -68,14 +68,14 @@
       true,
       140
     ],
-    "member-access": true,
+    "member-access": false,
     "member-ordering": [
       true,
       {
         "order": [
           "instance-field",
-          "instance-method",
           "static-field",
+          "instance-method",
           "static-method"
         ]
       }
@@ -169,7 +169,8 @@
     "prefer-template": true,
     "quotemark": [
       true,
-      "single"
+      "single",
+      "avoid-escape"
     ],
     "radix": true,
     "restrict-plus-operands": true,
