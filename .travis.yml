@@ -1,0 +1,17 @@
+language: node_js # Для сборки нужен будет NodeJS
+node_js:
+  - stable # Выбираем последню стабильную версию NodeJS
+script:
+  - cd Docs && npm i && npm run build && cd .. # Запускаем продакшен-сборку, скрипт из `package.json`
+deploy:
+  provider: pages # Используем возможности GithubPages
+  skip_cleanup: true # Не чистим рабочую директорию
+  # GITHUB_TOKEN — код, обеспечивающий интеграцию Тревиса и Гитхаба.
+  # Нужно сгенерировать тут: https://github.com/settings/tokens и добавить в настройки репозитория в Тревисе
+  github_token: $GITHUB_TOKEN
+  local_dir: dist # название директории, из которой будут отдаваться файлы на сервере
+  target-branch: master
+  email: torvalds@linux-foundation.org
+  name: Linus Torvalds
+  on:
+    branch: "src"

@@ -7,7 +7,7 @@
     "lint": "ng lint",
     "ng": "ng",
     "start": "ng serve",
-    "static": "static ../"
+    "static": "static ../dist"
   },
   "private": true,
   "dependencies": {
