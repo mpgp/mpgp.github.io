@@ -1,15 +1,51 @@
-language: node_js # Для сборки нужен будет NodeJS
+sudo: required
+language: node_js
 node_js:
-  - stable # Выбираем последню стабильную версию NodeJS
+  - stable
+addons:
+  chrome: stable
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+    - src
+
+before_install:
+  - sudo chown root /opt/google/chrome/chrome-sandbox
+  - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+install:
+  - cd spec
+  - npm i
+  - npm i coveralls
+  - cd ..
+before_script:
+  - cd spec
+  - npm run lint
+  - npm run build
+  - cd ..
 script:
-  - cd Docs && npm i && npm run build && cd .. # Запускаем продакшен-сборку, скрипт из `package.json`
+  - cd spec
+  - npm run travis:e2e
+  - npm run travis:test
+# coveralls.io
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - cd ..
+after_success:
+  - cd spec
+  # - https://circleci.com/
+  - cd ..
+  # - sync with bitbucket/gitlab
+
 deploy:
-  provider: pages # Используем возможности GithubPages
-  skip_cleanup: true # Не чистим рабочую директорию
-  # GITHUB_TOKEN — код, обеспечивающий интеграцию Тревиса и Гитхаба.
-  # Нужно сгенерировать тут: https://github.com/settings/tokens и добавить в настройки репозитория в Тревисе
+  provider: pages
+  skip_cleanup: true
+  # https://github.com/settings/tokens
   github_token: $GITHUB_TOKEN
-  local_dir: dist # название директории, из которой будут отдаваться файлы на сервере
+  local_dir: dist
   target-branch: master
   email: torvalds@linux-foundation.org
   name: Linus Torvalds
