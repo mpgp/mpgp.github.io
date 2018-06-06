@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', loadChildren: './features/default/default.module#DefaultModule' },
+  { path: '', pathMatch: 'full', redirectTo: 'default' },
+  { path: 'default', loadChildren: './features/default/default.module#DefaultModule' },
   { path: 'examples', loadChildren: './features/examples/examples.module#ExamplesModule' },
-  { path: '**', redirectTo: '/' },
+  { path: '**', redirectTo: 'default' },
 ];
 
 @NgModule({
