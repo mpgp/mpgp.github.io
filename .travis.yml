@@ -11,6 +11,7 @@ branches:
   only:
     - src
 
+# Preparate to install
 before_install:
   - sudo chown root /opt/google/chrome/chrome-sandbox
   - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
@@ -18,30 +19,42 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - cd spec
+
 install:
   - npm i
   - npm i coveralls
+
+# Lint the code
+# Build a source code
 before_script:
   - npm run lint
   - npm run build
+
+# Run tests
+# Generate coverage info and deploy it to coveralls.io
+# Copy ci files for prevent errors when deploying
 script:
   - npm run travis:e2e
   - npm run travis:test
-
-# coveralls.io
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-after_success:
   - cd ..
   - cp .travis.yml ./dist
   - cp -r .circleci ./dist
+
+# Sync github repo with gitlab
+# Build docker image and push it to hub
+after_success:
   - git remote add gitlab https://gitlab-ci-token:$GITLAB_TOKEN@gitlab.com/mpgp/mpgp.github.io.git
   - git push gitlab src
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build --rm -t mpgp129/mpgpspec -f ./docker/Dockerfile .
+  - docker push mpgp129/mpgpspec
 
+# Deploy dist folder to master(gh-pages) branch
+# https://github.com/settings/tokens
 deploy:
   provider: pages
   skip_cleanup: true
-  
-  # https://github.com/settings/tokens
   github_token: $GITHUB_TOKEN
   local_dir: dist
   target-branch: master
