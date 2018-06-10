@@ -1,0 +1,87 @@
+<ng-container *ngIf="route.params | async as params">
+  <form class="specification">
+    <mat-form-field>
+      <mat-select
+          placeholder="Specification" name="specification"
+          [value]="params.specification"
+          (selectionChange)="router.navigate(['/examples', $event.value,  0, 0, 0])"
+      >
+        <mat-option [value]="'websocket'">WebSocket</mat-option>
+        <mat-option [value]="'restapi'">RestApi</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <mat-tab-group
+      [selectedIndex]="params.module"
+      (selectedIndexChange)="router.navigate(['/examples', params.specification, $event, 0, 0])"
+      *ngIf="messages$ | async as messages"
+    >
+    <mat-tab [label]="message.name" *ngFor="let message of messages">
+      <ng-template matTabContent>
+        <mat-card class="example-card shadowed">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"><mat-icon color="primary">{{message.icon}}</mat-icon></div>
+            <mat-card-title>{{message.name}}</mat-card-title>
+            <mat-card-subtitle>{{message.description}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-accordion class="example-headers-align">
+              <mat-expansion-panel
+                  [expanded]="params.action == idx"
+                  (opened)="router.navigate(['/examples', params.specification, params.module, idx, params.tab])"
+                  *ngFor="let example of message.examples;let idx = index"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <mat-chip-list>
+                      <examples-chip [verb]="example.verb"></examples-chip>
+                      {{example.name}}
+                    </mat-chip-list>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{example.summary}}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>{{example.description}}</p>
+                <mat-tab-group
+                    [selectedIndex]="params.tab"
+                    (selectedIndexChange)="router.navigate(['/examples', params.specification, params.module, params.action, $event])"
+                >
+                  <mat-tab label="FIELDS" *ngIf="isNotEmpty(example.fields)">
+                    <examples-fields [fields]="example.fields"></examples-fields>
+                  </mat-tab>
+                  <mat-tab label="EXAMPLE" *ngIf="isNotEmpty(example.clientMessage)">
+                    <examples-code [jsonData]="example.clientMessage"></examples-code>
+                  </mat-tab>
+                  <mat-tab label="SUCCESS" *ngIf="isNotEmpty(example.serverMessage.success)">
+                    <mat-chip-list>
+                      <mat-chip color="accent" selected="true" *ngIf="example.serverMessage.success.status">
+                        {{example.serverMessage.success.status}}
+                      </mat-chip>
+                      {{example.serverMessage.success.description}}
+                    </mat-chip-list>
+                    <examples-code [jsonData]="example.serverMessage.success.data"></examples-code>
+                  </mat-tab>
+                  <mat-tab label="ERROR" *ngIf="example.serverMessage.errors.length">
+                    <div *ngFor="let error of example.serverMessage.errors; let last = last">
+                      <mat-chip-list>
+                        <mat-chip color="warn" selected="true" *ngIf="error.status">{{error.status}}</mat-chip>
+                        {{error.description}}
+                      </mat-chip-list>
+                      <examples-code [jsonData]="error.data"></examples-code>
+                      <ng-container *ngIf="!last">
+                        <mat-divider></mat-divider>
+                        <mat-divider></mat-divider>
+                        <br />
+                      </ng-container>
+                    </div>
+                  </mat-tab>
+                </mat-tab-group>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </mat-card-content>
+        </mat-card>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</ng-container>

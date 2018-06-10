@@ -1,0 +1,16 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="isHandset$ | async as isHandset">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="isHandset ? 'dialog' : 'navigation'"
+    [mode]="isHandset!.matches ? 'over' : 'side'"
+    [opened]="!isHandset!.matches"
+  >
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-sidenav-content [isHandset]="isHandset" (toggle)="drawer.toggle();"></app-sidenav-content>
+    <app-scroll-to-top></app-scroll-to-top>
+  </mat-sidenav-content>
+</mat-sidenav-container>

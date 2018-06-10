@@ -1,0 +1,10 @@
+app-sidenav {
+  .mat-list-item {
+    &.active {
+      background: #eee;
+    }
+  }
+  .cursive {
+    font-family: cursive;
+  }
+}

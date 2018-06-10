@@ -1,0 +1,31 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  width: 45px;
+  height: 45px;
+  z-index: 300;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #ccc;
+  transition: opacity .5s ease-in-out, opacity .2s ease-in-out, bottom .2s ease-in-out;
+
+  &:hover {
+    background-color: #999;
+  }
+
+  &.show-scroll {
+    opacity: 1;
+    bottom: 15px;
+    right: 15px;
+  }
+  &__icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    fill: #fff;
+    height: 16px;
+    width: 16px;
+  }
+}
