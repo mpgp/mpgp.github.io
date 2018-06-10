@@ -47,7 +47,7 @@ after_success:
   - git remote add gitlab https://gitlab-ci-token:$GITLAB_TOKEN@gitlab.com/mpgp/mpgp.github.io.git
   - git push gitlab src
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build --rm -t mpgp129/mpgpspec -f ./docker/Dockerfile .
+  - docker build --rm --no-cache -t mpgp129/mpgpspec -f ./docker/Dockerfile .
   - docker push mpgp129/mpgpspec
 
 # Deploy dist folder to master(gh-pages) branch
