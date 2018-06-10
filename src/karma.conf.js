@@ -20,10 +20,10 @@ module.exports = function(config) {
       reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true,
       thresholds: {
-        statements: 30,
-        lines: 30,
-        branches: 10,
-        functions: 30,
+        statements: /*8*/ 0,
+        lines: /*8*/ 0,
+        branches: /*8*/ 0,
+        functions: /*8*/ 0,
       },
     },
     reporters: ['progress', 'kjhtml'],
@@ -34,7 +34,7 @@ module.exports = function(config) {
     browsers: ['Chrome', 'ChromeCanary'],
 
     customLaunchers: {
-      Chrome_travis_ci: {
+      Chrome_ci: {
         base: 'Chrome',
         flags: ['--no-sandbox'],
       },
@@ -42,8 +42,8 @@ module.exports = function(config) {
     singleRun: false,
   };
 
-  if (process.env.TRAVIS) {
-    configuration.browsers = ['Chrome_travis_ci'];
+  if (process.env.TRAVIS || process.env.CIRCLECI || process.env.CI) {
+    configuration.browsers = ['Chrome_ci'];
   }
 
   config.set(configuration);

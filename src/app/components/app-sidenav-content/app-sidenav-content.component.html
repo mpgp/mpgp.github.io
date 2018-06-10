@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="toggleMenu()"
+    *ngIf="isHandset!.matches">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <span>MPGP Documentation</span>
+</mat-toolbar>
+<ng-content></ng-content>

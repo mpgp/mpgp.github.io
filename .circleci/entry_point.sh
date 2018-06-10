@@ -4,7 +4,9 @@ set -e
 
 COMMANDS_TO_RUN=()
 
-COMMANDS_TO_RUN+=('cd spec')
+COMMANDS_TO_RUN+=('node -v')
+COMMANDS_TO_RUN+=('npm -v')
+COMMANDS_TO_RUN+=('echo CIRCLE_BRANCH = $CIRCLE_BRANCH')
 COMMANDS_TO_RUN+=('npm run lint')
 
 RETURN_CODES=()

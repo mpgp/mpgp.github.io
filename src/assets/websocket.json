@@ -3,7 +3,7 @@
     "icon":"public",
     "name":"Main",
     "description":"The main messages.",
-    "examples":[{
+    "spec":[{
       "name":"ANY_MESSAGE_FOR_EXAMPLE",
       "summary":"Here are the basic data of messages.",
       "description":"A description for some message.",
@@ -125,7 +125,7 @@
     "icon":"comment",
     "name":"Communication",
     "description":"The communication messages.",
-    "examples":[{
+    "spec":[{
       "name":"CHAT_MESSAGE",
       "summary":"Send message to all users in main room.",
       "description":"",
@@ -235,7 +235,7 @@
     "icon":"notifications",
     "name":"Notification",
     "description":"The notification messages.",
-    "examples":[{
+    "spec":[{
       "name":"USER_CONNECTION_MESSAGE",
       "summary":"Send message to all users in main room.",
       "description":"The server sends this message if user connect or disconnect to server.",

@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'default' },
-  { path: 'default', loadChildren: './features/default/default.module#DefaultModule' },
-  { path: 'examples', loadChildren: './features/examples/examples.module#ExamplesModule' },
-  { path: '**', redirectTo: 'default' },
+  { path: '', pathMatch: 'full', redirectTo: 'docs' },
+  { path: 'docs', loadChildren: './features/docs/docs.module#DocsModule' },
+  { path: 'spec', loadChildren: './features/spec/spec.module#SpecModule' },
+  { path: '**', redirectTo: 'docs' },
 ];
 
 @NgModule({

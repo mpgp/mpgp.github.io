@@ -3,7 +3,7 @@
     "icon":"account_circle",
     "name":"Account",
     "description":"The basic operations with an account.",
-    "examples":[{
+    "spec":[{
       "verb":"GET",
       "name":"/api/account/{accountId}",
       "summary":"Get account info.",
@@ -222,7 +222,7 @@
     "icon":"settings",
     "name":"Manage",
     "description":"The advanced operations to manage your account. With this actions you can update your profile, change password, etc...",
-    "examples":[{
+    "spec":[{
       "verb":"POST",
       "name":"/api/manage",
       "summary":"Change a password for your account.",
@@ -249,7 +249,7 @@
     "icon":"message",
     "name":"UserWall",
     "description":"The operations with an user wall.",
-    "examples":[{
+    "spec":[{
       "verb":"GET",
       "name":"/api/userwall/{userWallId}",
       "summary":"Get a specific wall post by id.",

@@ -2,15 +2,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { components } from './components';
+import { containers } from './containers';
 import { MaterialModule } from './material.module';
 
-const sharedModules = [FormsModule];
-
-const sharedComponents = [];
+const sharedModules = [CommonModule, FormsModule];
 
 @NgModule({
-  declarations: [...sharedComponents],
-  exports: [CommonModule, MaterialModule, ...sharedComponents, ...sharedModules],
-  imports: [CommonModule, MaterialModule, ...sharedModules],
+  declarations: [...components, ...containers],
+  exports: [MaterialModule, ...components, ...containers, ...sharedModules],
 })
 export class SharedModule {}

@@ -26,7 +26,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "spec/package.json" }}
+          - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
@@ -36,7 +36,7 @@ jobs:
 
       - run:
           name: Install Packages
-          command: (cd spec && npm install --frozen-lockfile)
+          command: npm install --frozen-lockfile
 
       - run:
           name: Test Packages
@@ -44,5 +44,5 @@ jobs:
 
       - save_cache:
           paths:
-            - spec/node_modules
-          key: v1-dependencies-{{ checksum "spec/package.json" }}
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}

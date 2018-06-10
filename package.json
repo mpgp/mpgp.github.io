@@ -19,7 +19,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "ng lint",
+      "ng lint spec",
+      "ng lint spec-e2e",
       "git add"
     ]
   },

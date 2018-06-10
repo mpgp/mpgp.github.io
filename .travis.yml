@@ -6,7 +6,7 @@ addons:
   chrome: stable
 cache:
   directories:
-    - spec/node_modules
+    - node_modules
 branches:
   only:
     - src
@@ -18,7 +18,7 @@ before_install:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - cd spec
+  - echo TRAVIS_BRANCH = $TRAVIS_BRANCH
 
 install:
   - npm i
@@ -37,7 +37,6 @@ script:
   - npm run travis:e2e
   - npm run travis:test
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - cd ..
   - cp .travis.yml ./dist
   - cp -r .circleci ./dist
 

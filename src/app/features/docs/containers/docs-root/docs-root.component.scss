@@ -1,0 +1,19 @@
+docs-root {
+  .mat-nav-list {
+    .mat-list-item {
+      height: 30px;
+    }
+    .mat-nav-list {
+      margin-left: 15px;
+    }
+  }
+  .mat-card {
+    font-family: sans-serif;
+    h2 a {
+      color: black;
+    }
+    .mat-card-subtitle a {
+      color: rgba(0,0,0,.54);
+    }
+  }
+}
