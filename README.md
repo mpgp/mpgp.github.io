@@ -15,7 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [![CircleCI](https://circleci.com/gh/mpgp/mpgp.github.io.svg?style=svg)](https://circleci.com/gh/mpgp/mpgp.github.io)
 
 [![Coverage Status](https://coveralls.io/repos/github/mpgp/mpgp.github.io/badge.svg?branch=src)](https://coveralls.io/github/mpgp/mpgp.github.io?branch=src)
-[![Known Vulnerabilities](https://snyk.io/test/github/mpgp/mpgp.github.io/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mpgp/mpgp.github.io?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/mpgp/mpgp.github.io/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mpgp/mpgp.github.io?targetFile=package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/mpgp/mpgp.github.io.svg)](https://greenkeeper.io/)
 
 ## Development server
 
