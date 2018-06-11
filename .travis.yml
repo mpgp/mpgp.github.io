@@ -10,6 +10,7 @@ cache:
 branches:
   only:
     - src
+    - /^greenkeeper/.*$/
 
 # Preparate to install
 before_install:
