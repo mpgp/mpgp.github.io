@@ -18,6 +18,7 @@ export class DocsRootComponent implements OnInit {
         map(({ id }) => document.getElementById(id)),
         filter(element => !!element),
       )
+      // FIXME: unsub.
       .subscribe(element => {
         element.scrollIntoView();
       });

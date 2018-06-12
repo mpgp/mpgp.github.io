@@ -1,0 +1,49 @@
+mpgp.github.io:
+https://github.com/mpgp/mpgp.github.io/projects/1
+
+    In Progress:
+
+        @critical @bug
+        ☐ use yarn instead of npm @created(18-06-12 21:28:46)
+
+        @low @feature 
+        ☐ feat(compodoc): install package https://github.com/compodoc/compodoc
+
+        @high @refactoring 
+        ☐ refactor: use css BEM-selectors @created(18-06-12 21:35:58)
+
+        @low
+        ☐ read the angular guides https://angular.io/guide/security @created(18-06-12 21:41:03)
+
+        @low
+        ☐ read article about reusable components https://habrahabr.ru/post/320414/ @created(18-06-12 21:41:33)
+
+    To Do:
+
+        @low @chore
+        ☐ chore(docs): split chapters by mat-card in docs-root.component.html @created(18-06-12 20:44:45)
+
+        @low @chore
+        ☐ chore(spec): decomposite spec-root to small components @created(18-06-12 20:44:43)
+
+        @high @feature 
+        ☐ feat(editor): add json editor for HUMAN @created(18-06-12 20:51:30)
+        https://pp.userapi.com/c847122/v847122522/4b395/Fw0nCxQ4Yv4.jpg
+        https://github.com/mpgp/mpgp.github.io/blob/develop/2.jpg
+        https://raw.githubusercontent.com/mpgp/mpgp.github.io/develop/2.jpg
+        https://github.com/mpgp/mpgp.github.io/blob/develop/2.jpg?raw=true
+
+        @low @feature 
+        ☐ feat(demo): add 'Try It Out' page for testing rest_api @created(18-06-12 20:54:42)
+        ☐ feat(demo): add 'Try It Out' page for testing websocket @created(18-06-12 20:54:59)
+        ☐ feat(demo): add support to authorization header for rest_api @created(18-06-12 21:09:51)
+        Like in a swagger
+        https://sun9-5.userapi.com/c840621/v840621262/8126a/S7MnNBMrino.jpg
+        https://github.com/mpgp/mpgp.github.io/blob/develop/1.png?raw=true
+
+Archive:
+    ✔ feat(precomit): install package https://github.com/okonet/lint-staged @created(18-06-12 21:35:58) @project(mpgp.github.io.In Progress) @done(18-06-12 21:44:54)
+
+Info:
+    https://conventionalcommits.org
+    https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines
