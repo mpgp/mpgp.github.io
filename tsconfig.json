@@ -1,6 +1,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "pretty": true,
+    "removeComments": true,
     "baseUrl": "src",
     "paths": {
       "@app/*": ["app/*"],
