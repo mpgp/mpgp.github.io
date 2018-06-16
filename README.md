@@ -37,7 +37,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Serve Docs
 
-* If u want to serve this Docs on localhost you can use npm package - node-static.
+If u want to serve this Docs on localhost you can use npm package - node-static.
 
 ```sh
 npm i -g node-static

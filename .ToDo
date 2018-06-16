@@ -17,11 +17,11 @@ https://github.com/mpgp/mpgp.github.io/projects/1
 
     To Do:
 
-        @low @chore
-        ☐ chore(docs): split chapters by mat-card in docs-root.component.html @created(18-06-12 20:44:45)
+        @low @refactoring
+        ☐ refactor(docs): split chapters by mat-card in docs-root.component.html @created(18-06-12 20:44:45)
 
-        @low @chore
-        ☐ chore(spec): decomposite spec-root to small components @created(18-06-12 20:44:43)
+        @low @refactoring
+        ☐ refactor(spec): decomposite spec-root to small components @created(18-06-12 20:44:43)
 
         @high @feature 
         ☐ feat(editor): add json editor for HUMAN @created(18-06-12 20:51:30)
@@ -41,7 +41,7 @@ https://github.com/mpgp/mpgp.github.io/projects/1
 Archive:
     ✔ chore: add package https://github.com/okonet/lint-staged @created(18-06-12 21:35:58) @project(mpgp.github.io.In Progress) @done(18-06-12 21:44:54)
     ✔ chore: add package https://github.com/marionebl/commitlint @created(18-06-16 08:56:25) @done(18-06-16 09:01:12)
-    ✔ chore add package https://github.com/semantic-release/semantic-release @created(18-06-16 08:57:06) @done(18-06-16 09:02:30)
+    ✔ chore: add package https://github.com/semantic-release/semantic-release @created(18-06-16 08:57:06) @done(18-06-16 09:02:30)
 
 Info:
     https://conventionalcommits.org
