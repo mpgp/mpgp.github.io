@@ -1,63 +1,74 @@
 sudo: required
 language: node_js
 node_js:
-  - stable
+    - stable
 addons:
-  chrome: stable
+    chrome: stable
 cache:
-  directories:
-    - node_modules
+    directories:
+        - node_modules
 branches:
-  only:
-    - src
+    only:
+        - src
 
 # Preparate to install
 before_install:
-  - sudo chown root /opt/google/chrome/chrome-sandbox
-  - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - echo TRAVIS_BRANCH = $TRAVIS_BRANCH
+    - sudo chown root /opt/google/chrome/chrome-sandbox
+    - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
+    - export CHROME_BIN=chromium-browser
+    - export DISPLAY=:99.0
+    - sh -e /etc/init.d/xvfb start
+    - echo TRAVIS_BRANCH = $TRAVIS_BRANCH
 
+# Install dependencies
 install:
-  - npm i
-  - npm i coveralls
+    - yarn install
+    - yarn add coveralls
 
 # Lint the code
 # Build a source code
 before_script:
-  - npm run lint
-  - npm run build
+    - yarn run lint
+    - yarn run build
 
-# Run tests
-# Generate coverage info and deploy it to coveralls.io
-# Copy ci files for prevent errors when deploying
 script:
-  - npm run travis:e2e
-  - npm run travis:test
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - cp .travis.yml ./dist
-  - cp -r .circleci ./dist
+# Run tests
+    - yarn run travis:e2e
+    - yarn run travis:test
+
+# Generate coverage info and deploy it to coveralls.io
+    - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+# Copy ci files for prevent errors when deploying
+    - cp .travis.yml ./dist
+    - cp -r .circleci ./dist
+
+deploy:
+    - on:
+        branch: "src"
+      provider: script
+      skip_cleanup: true
+      script:
+# Deploy semantic-release
+          - npx semantic-release
 
 # Sync github repo with gitlab
+          - git remote add gitlab https://gitlab-ci-token:$GITLAB_TOKEN@gitlab.com/mpgp/mpgp.github.io.git
+          - git push gitlab src
+
 # Build docker image and push it to hub
-after_success:
-  - git remote add gitlab https://gitlab-ci-token:$GITLAB_TOKEN@gitlab.com/mpgp/mpgp.github.io.git
-  - git push gitlab src
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build --rm --no-cache -t mpgp129/mpgpspec -f ./docker/Dockerfile .
-  - docker push mpgp129/mpgpspec
+          - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          - docker build --rm --no-cache -t mpgp129/mpgpspec -f ./docker/Dockerfile .
+          - docker push mpgp129/mpgpspec
 
 # Deploy dist folder to master(gh-pages) branch
 # https://github.com/settings/tokens
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
-  target-branch: master
-  email: torvalds@linux-foundation.org
-  name: Linus Torvalds
-  on:
-    branch: "src"
+    - on:
+        branch: "src"
+      provider: pages:
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN
+      local_dir: dist
+      target-branch: master
+      email: torvalds@linux-foundation.org
+      name: Linus Torvalds

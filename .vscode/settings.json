@@ -26,6 +26,9 @@
   "[todo]": {
     "editor.tabSize": 4,
   },
+  "[yaml]": {
+    "editor.tabSize": 4,
+  },
   "todo.file": ".ToDo",
   "todo.indentation": "    ",
   "todo.tags.names": ["critical", "high", "low", "today", "feature", "bug", "chore", "refactoring"],
