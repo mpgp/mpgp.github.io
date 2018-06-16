@@ -42,7 +42,9 @@ https://github.com/mpgp/mpgp.github.io/projects/1
         https://github.com/mpgp/mpgp.github.io/blob/develop/1.png?raw=true
 
 Archive:
-    ✔ feat(precomit): install package https://github.com/okonet/lint-staged @created(18-06-12 21:35:58) @project(mpgp.github.io.In Progress) @done(18-06-12 21:44:54)
+    ✔ chore: add package https://github.com/okonet/lint-staged @created(18-06-12 21:35:58) @project(mpgp.github.io.In Progress) @done(18-06-12 21:44:54)
+    ✔ chore: add package https://github.com/marionebl/commitlint @created(18-06-16 08:56:25) @done(18-06-16 09:01:12)
+    ✔ chore add package https://github.com/semantic-release/semantic-release @created(18-06-16 08:57:06) @done(18-06-16 09:02:30)
 
 Info:
     https://conventionalcommits.org
