@@ -4,8 +4,9 @@ set -e
 
 COMMANDS_TO_RUN=()
 
+COMMANDS_TO_RUN+=('echo Update GitLab repository')
 COMMANDS_TO_RUN+=('git remote add gitlab https://gitlab-ci-token:$GITLAB_TOKEN@gitlab.com/mpgp/mpgp.github.io.git')
-COMMANDS_TO_RUN+=('git push gitlab src')
+COMMANDS_TO_RUN+=('git push gitlab $BRANCH')
 
 RETURN_CODES=()
 FAILURE=0
