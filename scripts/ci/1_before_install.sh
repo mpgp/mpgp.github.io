@@ -4,9 +4,11 @@ set -e
 
 COMMANDS_TO_RUN=()
 
-COMMANDS_TO_RUN+=('node -v')
-COMMANDS_TO_RUN+=('npm -v')
-COMMANDS_TO_RUN+=('echo BRANCH = $BRANCH')
+COMMANDS_TO_RUN+=('sudo chown root /opt/google/chrome/chrome-sandbox')
+COMMANDS_TO_RUN+=('sudo chmod 4755 /opt/google/chrome/chrome-sandbox')
+COMMANDS_TO_RUN+=('export CHROME_BIN=chromium-browser')
+COMMANDS_TO_RUN+=('export DISPLAY=:99.0')
+COMMANDS_TO_RUN+=('sh -e /etc/init.d/xvfb start')
 
 RETURN_CODES=()
 FAILURE=0

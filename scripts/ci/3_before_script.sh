@@ -4,9 +4,8 @@ set -e
 
 COMMANDS_TO_RUN=()
 
-COMMANDS_TO_RUN+=('node -v')
-COMMANDS_TO_RUN+=('npm -v')
-COMMANDS_TO_RUN+=('echo BRANCH = $BRANCH')
+COMMANDS_TO_RUN+=('yarn run lint')
+COMMANDS_TO_RUN+=('yarn run build')
 
 RETURN_CODES=()
 FAILURE=0

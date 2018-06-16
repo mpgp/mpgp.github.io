@@ -85,10 +85,11 @@
     "precommit": "lint-staged",
     "start": "ng serve",
     "static": "static ./dist",
-    "test": "CHROME_BIN=chromium ng test",
+    "test": "echo Please use yarn run test:unit",
+    "test:unit": "CHROME_BIN=chromium ng test",
     "test:e2e": "CHROME_BIN=chromium ng e2e",
-    "travis:test": "CHROME_BIN=chromium-browser DISPLAY=:99.0 ng test --watch=false --code-coverage",
-    "travis:e2e": "CHROME_BIN=chromium-browser DISPLAY=:99.0 ng e2e"
+    "ci:test": "CHROME_BIN=chromium-browser DISPLAY=:99.0 ng test --watch=false --code-coverage",
+    "ci:e2e": "CHROME_BIN=chromium-browser DISPLAY=:99.0 ng e2e"
   },
   "dependencies": {
     "@angular/animations": "6.0.4",

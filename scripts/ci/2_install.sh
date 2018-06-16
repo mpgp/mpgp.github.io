@@ -4,9 +4,8 @@ set -e
 
 COMMANDS_TO_RUN=()
 
-COMMANDS_TO_RUN+=('node -v')
-COMMANDS_TO_RUN+=('npm -v')
-COMMANDS_TO_RUN+=('echo BRANCH = $BRANCH')
+COMMANDS_TO_RUN+=('yarn install')
+COMMANDS_TO_RUN+=('yarn add coveralls')
 
 RETURN_CODES=()
 FAILURE=0

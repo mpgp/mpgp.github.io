@@ -4,9 +4,10 @@ set -e
 
 COMMANDS_TO_RUN=()
 
-COMMANDS_TO_RUN+=('node -v')
-COMMANDS_TO_RUN+=('npm -v')
-COMMANDS_TO_RUN+=('echo BRANCH = $BRANCH')
+COMMANDS_TO_RUN+=('echo $DOCKER_USERNAME')
+COMMANDS_TO_RUN+=('echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin')
+COMMANDS_TO_RUN+=('docker build --rm --no-cache -t mpgp129/mpgpspec -f ./docker/Dockerfile .')
+COMMANDS_TO_RUN+=('docker push mpgp129/mpgpspec')
 
 RETURN_CODES=()
 FAILURE=0

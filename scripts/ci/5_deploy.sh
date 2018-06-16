@@ -4,9 +4,9 @@ set -e
 
 COMMANDS_TO_RUN=()
 
-COMMANDS_TO_RUN+=('node -v')
-COMMANDS_TO_RUN+=('npm -v')
-COMMANDS_TO_RUN+=('echo BRANCH = $BRANCH')
+COMMANDS_TO_RUN+=('npx semantic-release --branch $BRANCH')
+COMMANDS_TO_RUN+=('bash scripts/gitlab_sync.sh')
+COMMANDS_TO_RUN+=('bash scripts/docker_hub.sh')
 
 RETURN_CODES=()
 FAILURE=0

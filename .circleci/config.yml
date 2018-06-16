@@ -40,7 +40,7 @@ jobs:
 
       - run:
           name: Test Packages
-          command: chmod +x ./.circleci/entry_point.sh && ./.circleci/entry_point.sh
+          command: BRANCH=$CIRCLE_BRANCH bash ./.circleci/entry_point.sh
 
       - save_cache:
           paths:
