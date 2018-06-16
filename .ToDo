@@ -3,9 +3,6 @@ https://github.com/mpgp/mpgp.github.io/projects/1
 
     In Progress:
 
-        @critical @bug
-        ☐ use yarn instead of npm @created(18-06-12 21:28:46)
-
         @low @feature 
         ☐ feat(compodoc): install package https://github.com/compodoc/compodoc
 
