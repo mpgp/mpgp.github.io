@@ -17,6 +17,40 @@
   "bugs": {
     "url": "https://github.com/mpgp/mpgp.github.io/issues"
   },
+  "commitlint": {
+    "extends": [
+      "./node_modules/@commitlint/config-conventional"
+    ],
+    "rules": {
+      "scope-enum": [
+        2,
+        "always",
+        [
+          "core",
+          "shared",
+          "docs",
+          "spec"
+        ]
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "chore",
+          "ci",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test"
+        ]
+      ]
+    }
+  },
   "lint-staged": {
     "*.ts": [
       "ng lint spec",
@@ -27,6 +61,7 @@
   "scripts": {
     "build": "npm run clean && ng build --prod",
     "clean": "rm -rf ./dist",
+    "commitmsg": "commitlint -E GIT_PARAMS",
     "lint": "ng lint",
     "ng": "ng",
     "precommit": "lint-staged",
@@ -58,11 +93,14 @@
     "@angular/cli": "6.0.8",
     "@angular/compiler-cli": "6.0.4",
     "@angular/language-service": "6.0.4",
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "@commitlint/config-lerna-scopes": "^7.0.0",
     "@types/jasmine": "2.8.8",
     "@types/jasminewd2": "2.0.3",
     "@types/node": "10.1.4",
     "codelyzer": "4.3.0",
-    "husky": "0.14.3",
+    "husky": "^0.14.3",
     "jasmine-core": "3.1.0",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "2.0.2",
