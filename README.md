@@ -2,6 +2,8 @@
 
 https://mpgp.github.io/
 
+[![Multiplayer Game Platform](https://sun9-4.userapi.com/c830309/v830309006/7e7bf/GO75bBP796g.jpg)](https://mpgp.github.io/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.
 
 ---
