@@ -36,7 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref" : "/",
+            "baseHref": "/",
             "deployUrl": "/",
             "outputPath": "./dist",
             "index": "src/index.html",
@@ -63,7 +63,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref" : "/",
+              "baseHref": "/",
               "deployUrl": "/",
               "optimization": true,
               "outputHashing": "all",
