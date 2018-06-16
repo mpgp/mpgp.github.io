@@ -10,6 +10,7 @@ cache:
 branches:
   only:
     - src
+    - /^greenkeeper/.*$/
 
 before_install:
   - bash scripts/ci/1_before_install.sh
