@@ -17,6 +17,13 @@
   "bugs": {
     "url": "https://github.com/mpgp/mpgp.github.io/issues"
   },
+  "greenkeeper": {
+    "ignore": [
+      "@types/node",
+      "ts-node",
+      "typescript"
+    ]
+  },
   "commitlint": {
     "extends": [
       "./node_modules/@commitlint/config-conventional"
