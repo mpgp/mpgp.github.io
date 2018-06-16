@@ -1,11 +1,8 @@
 mpgp.github.io:
-https://github.com/mpgp/mpgp.github.io/projects/1
+    https://github.com/mpgp/mpgp.github.io/projects/1
 
     In Progress:
-
-        @low @feature 
-        ☐ feat(compodoc): install package https://github.com/compodoc/compodoc
-
+        
         @high @refactoring 
         ☐ refactor: use css BEM-selectors @created(18-06-12 21:35:58)
 
