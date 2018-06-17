@@ -1,19 +1,23 @@
-docs-root {
-  .mat-nav-list {
+.docs {
+  &-list {
+    .docs-list {
+      margin-left: 15px;
+    }
+    
     .mat-list-item {
       height: 30px;
     }
-    .mat-nav-list {
-      margin-left: 15px;
-    }
   }
-  .mat-card {
+
+  &-card {
     font-family: sans-serif;
-    h2 a {
-      color: black;
-    }
-    .mat-card-subtitle a {
-      color: rgba(0,0,0,.54);
-    }
+  }
+
+  &-subtitle {
+    color: rgba(0,0,0,.54);
+  }
+
+  &-nav-link {
+    color: black;
   }
 }

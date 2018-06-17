@@ -2,9 +2,12 @@ mpgp.github.io:
     https://github.com/mpgp/mpgp.github.io/projects/1
 
     In Progress:
-        
-        @high @refactoring 
-        ☐ refactor: use css BEM-selectors @created(18-06-12 21:35:58)
+
+        @low @refactoring
+        ☐ refactor(docs): split chapters by mat-card in docs-root.component.html @created(18-06-12 20:44:45)
+
+        @low @refactoring
+        ☐ refactor(spec): decomposite spec-root to small components @created(18-06-12 20:44:43)
 
         @low
         ☐ read the angular guides https://angular.io/guide/security @created(18-06-12 21:41:03)
@@ -13,12 +16,6 @@ mpgp.github.io:
         ☐ read article about reusable components https://habrahabr.ru/post/320414/ @created(18-06-12 21:41:33)
 
     To Do:
-
-        @low @refactoring
-        ☐ refactor(docs): split chapters by mat-card in docs-root.component.html @created(18-06-12 20:44:45)
-
-        @low @refactoring
-        ☐ refactor(spec): decomposite spec-root to small components @created(18-06-12 20:44:43)
 
         @high @feature 
         ☐ feat(editor): add json editor for HUMAN @created(18-06-12 20:51:30)
