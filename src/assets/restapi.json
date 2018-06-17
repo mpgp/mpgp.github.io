@@ -125,7 +125,7 @@
         "validators":[
           {"name":"maxLength","value":20},
           {"name":"minLength","value":3},
-          {"name":"pattern","value":"^([^\\s]+?\\s?[^\\s]+?)+?$"}
+          {"name":"pattern","value":"^[^\\s].{1,18}[^\\s]$"}
         ]
       },{
         "name":"password",
