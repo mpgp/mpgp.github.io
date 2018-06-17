@@ -5,6 +5,7 @@ node_js:
 addons:
   chrome: stable
 cache:
+  yarn: true
   directories:
     - node_modules
 branches:
@@ -12,17 +13,25 @@ branches:
     - src
     - /^greenkeeper/.*$/
 
+env:
+  global:
+    - BRANCH=$TRAVIS_BRANCH
+    - GITLAB_REPO_OWNER=mpgp
+    - GITLAB_REPO_NAME=mpgp.github.io
+    - DOCKER_IMAGE_OWNER=mpgp129
+    - DOCKER_IMAGE_NAME=mpgpspec
+
 before_install:
-  - bash scripts/ci/1_before_install.sh
+  - bash scripts/bash_runner.sh scripts/ci/1_before_install.sh
 
 install:
-  - bash scripts/ci/2_install.sh
+  - bash scripts/bash_runner.sh scripts/ci/2_install.sh
 
 before_script:
-  - bash scripts/ci/3_before_script.sh
+  - bash scripts/bash_runner.sh scripts/ci/3_before_script.sh
 
 script:
-  - bash scripts/ci/4_script.sh
+  - bash scripts/bash_runner.sh scripts/ci/4_script.sh
 
 deploy:
   - on:
@@ -30,7 +39,7 @@ deploy:
     provider: script
     skip_cleanup: true
     script:
-      - BRANCH=$TRAVIS_BRANCH DOCKER_USERNAME=$DOCKER_USERNAME DOCKER_PASSWORD=$DOCKER_PASSWORD GITLAB_TOKEN=$GITLAB_TOKEN bash scripts/ci/5_deploy.sh
+      - bash scripts/bash_runner.sh scripts/ci/5_deploy.sh
 
 # Deploy dist folder to master(gh-pages) branch
 # https://github.com/settings/tokens
