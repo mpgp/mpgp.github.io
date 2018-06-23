@@ -12,4 +12,4 @@ const routes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(routes)],
 })
-export class SpecRoutingModule {}
+export class SpecRoutingModule { }

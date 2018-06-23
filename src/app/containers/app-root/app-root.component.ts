@@ -12,5 +12,5 @@ import { Observable } from 'rxjs';
 export class AppRootComponent {
   isHandset$: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
 
-  constructor(private readonly breakpointObserver: BreakpointObserver) {}
+  constructor(private readonly breakpointObserver: BreakpointObserver) { }
 }

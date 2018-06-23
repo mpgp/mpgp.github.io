@@ -32,7 +32,7 @@ export class CacheService {
     if (fallback && fallback instanceof Observable) {
       this.inFlightObservables.set(key, new Subject());
 
-      return fallback.pipe(tap(value => this.set(key, value, cacheTime))) as Observable<T>;
+      return fallback.pipe(tap(value => this.set(key, value, cacheTime)));
     }
 
     return throwError('Requested key is not available in Cache');
@@ -78,11 +78,11 @@ export class CacheService {
 
 /* tslint:disable:no-any no-invalid-this */
 export function Cacheable(cacheTime: number = CacheService.cacheTime): Function {
-  return function(target: Object, methodName: string, propertyDescriptor: PropertyDescriptor): PropertyDescriptor {
-    const descriptor = propertyDescriptor || (Object.getOwnPropertyDescriptor(target, methodName) as PropertyDescriptor);
+  return (target: Object, methodName: string, propertyDescriptor: PropertyDescriptor): PropertyDescriptor => {
+    const descriptor = propertyDescriptor || Object.getOwnPropertyDescriptor(target, methodName);
     const originalMethod = descriptor.value;
 
-    descriptor.value = function(): any {
+    descriptor.value = function newMethod(): any {
       const args = Array.from(arguments);
       const key = `${target.constructor.name}.${methodName}:${args.join(',')}`;
       const result = originalMethod.apply(this, args);

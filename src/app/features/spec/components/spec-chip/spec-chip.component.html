@@ -1,6 +1,6 @@
 <ng-container [ngSwitch]="true">
-  <mat-chip color="accent" selected="true" *ngSwitchCase="isAccent">{{verb}}</mat-chip>
-  <mat-chip color="primary" selected="true" *ngSwitchCase="isPrimary">{{verb}}</mat-chip>
-  <mat-chip color="warn" selected="true" *ngSwitchCase="isWarn">{{verb}}</mat-chip>
+  <mat-chip class="spec-chip" color="accent" selected="true" *ngSwitchCase="isAccent">{{verb}}</mat-chip>
+  <mat-chip class="spec-chip" color="primary" selected="true" *ngSwitchCase="isPrimary">{{verb}}</mat-chip>
+  <mat-chip class="spec-chip" color="warn" selected="true" *ngSwitchCase="isWarn">{{verb}}</mat-chip>
   <span *ngSwitchDefault>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 </ng-container>

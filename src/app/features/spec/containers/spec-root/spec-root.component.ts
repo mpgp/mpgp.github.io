@@ -16,7 +16,7 @@ import { SpecService } from '../../services/spec.service';
 export class SpecRootComponent implements OnInit {
   messages$: Observable<Message[]>;
 
-  constructor(public readonly route: ActivatedRoute, public readonly router: Router, private readonly specService: SpecService) {}
+  constructor(public readonly route: ActivatedRoute, public readonly router: Router, private readonly specService: SpecService) { }
 
   ngOnInit(): void {
     this.messages$ = this.route.params.pipe(

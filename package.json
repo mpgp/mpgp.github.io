@@ -63,6 +63,14 @@
       "ng lint spec",
       "ng lint spec-e2e",
       "git add"
+    ],
+    "*.css": [
+      "yarn run lint:css",
+      "git add"
+    ],
+    "*.scss": [
+      "yarn run lint:scss",
+      "git add"
     ]
   },
   "release": {
@@ -84,11 +92,16 @@
     ]
   },
   "scripts": {
-    "build": "npm run clean && ng build --prod",
-    "clean": "rm -rf ./dist",
+    "build": "npm run clean:dist && ng build --prod",
+    "clean:dist": "rm -rf ./dist",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "compodoc": "./node_modules/.bin/compodoc -d dist/compodoc -p tsconfig.json -n 'MPGP Documentation'",
     "lint": "ng lint",
+    "stylelint": "stylelint",
+    "lint:css": "stylelint  --config src/.stylelintrc/app.json",
+    "lint:scss": "stylelint --syntax scss --config src/.stylelintrc/app.json",
+    "lint:css:all": "yarn run lint:css \"**/*.css\"",
+    "lint:scss:all": "yarn run lint:scss \"**/*.scss\"",
     "ng": "ng",
     "precommit": "lint-staged",
     "start": "ng serve",
@@ -113,6 +126,8 @@
     "@angular/router": "6.0.4",
     "core-js": "2.5.7",
     "rxjs": "6.2.0",
+    "stylelint": "9.3.0",
+    "stylelint-order": "0.8.1",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
@@ -145,5 +160,8 @@
     "ts-node": "6.1.0",
     "tslint": "5.10.0",
     "typescript": "2.7.2"
+  },
+  "optionalDependencies": {
+    "~": "tslint-hack"
   }
 }

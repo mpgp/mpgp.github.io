@@ -13,7 +13,7 @@ import { filter, map, takeUntil } from 'rxjs/operators';
 export class DocsRootComponent implements OnInit, OnDestroy {
   private readonly componentDestroyed$ = new Subject<boolean>();
 
-  constructor(private readonly route: ActivatedRoute) {}
+  constructor(private readonly route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params
@@ -21,7 +21,7 @@ export class DocsRootComponent implements OnInit, OnDestroy {
         takeUntil(this.componentDestroyed$),
         map(({ id }) => document.getElementById(id)),
         filter(element => !!element),
-      )
+    )
       .subscribe(element => element.scrollIntoView());
   }
 

@@ -1,31 +1,32 @@
 .scroll-to-top {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  width: 45px;
-  height: 45px;
-  z-index: 300;
-  cursor: pointer;
-  border-radius: 10px;
   background-color: #ccc;
-  transition: opacity .5s ease-in-out, opacity .2s ease-in-out, bottom .2s ease-in-out;
+  border-radius: 10px;
+  bottom: 0;
+  cursor: pointer;
+  height: 45px;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  transition: opacity 0.5s ease-in-out, opacity 0.2s ease-in-out, bottom 0.2s ease-in-out;
+  width: 45px;
+  z-index: 300;
 
   &:hover {
     background-color: #999;
   }
 
   &.show-scroll {
-    opacity: 1;
     bottom: 15px;
+    opacity: 1;
     right: 15px;
   }
+
   &__icon {
-    position: absolute;
-    top: 15px;
-    left: 15px;
     fill: #fff;
     height: 16px;
+    left: 15px;
+    position: absolute;
+    top: 15px;
     width: 16px;
   }
 }

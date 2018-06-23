@@ -1,11 +1,11 @@
-<div *ngFor="let field of fields">
-    <p>
-      <span title="The field is required." class="required" *ngIf="field.required" >*</span>
-      {{field.name}}
-    </p>
-    <ul *ngIf="field.validators">
-      <li *ngFor="let validator of field.validators">
-        {{validator.name}}: {{validator.value}}
-      </li>
-    </ul>
-  </div>
+<div class="spec-fields" *ngFor="let field of fields">
+  <p>
+    <span title="The field is required." class="required" *ngIf="field.required">*</span>
+    {{field.name}}
+  </p>
+  <ul *ngIf="field.validators">
+    <li *ngFor="let validator of field.validators">
+      {{validator.name}}: {{validator.value}}
+    </li>
+  </ul>
+</div>

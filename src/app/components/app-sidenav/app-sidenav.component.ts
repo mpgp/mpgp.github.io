@@ -7,4 +7,4 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   styleUrls: ['./app-sidenav.component.scss'],
   templateUrl: './app-sidenav.component.html',
 })
-export class AppSidenavComponent {}
+export class AppSidenavComponent { }

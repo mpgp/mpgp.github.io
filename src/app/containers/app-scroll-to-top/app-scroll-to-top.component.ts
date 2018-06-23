@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, HostListener, ViewEncapsulation } f
   templateUrl: './app-scroll-to-top.component.html',
 })
 export class AppScrollToTopComponent {
-  showScroll = true;
+  showScroll = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {

@@ -1,4 +1,4 @@
-// tslint:disable: no-any
+// tslint:disable: no-any no-implicit-dependencies
 import { browser, by, element } from 'protractor';
 
 export class AppPage {

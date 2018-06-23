@@ -1,0 +1,31 @@
+{
+  "extends": "./standard.json",
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "block-opening-brace-newline-before": null,
+    "declaration-block-no-redundant-longhand-properties": true,
+    "max-line-length": 140,
+    "no-missing-end-of-source-newline": null,
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "rules",
+      "at-rules"
+    ],
+    "order/properties-alphabetical-order": true,
+    "selector-attribute-quotes": "always",
+    "shorthand-property-no-redundant-values": true,
+    "string-quotes": "single",
+    "unit-whitelist": [
+      "%",
+      "em",
+      "px",
+      "rem",
+      "s"
+    ],
+    "value-keyword-case": "lower"
+  }
+}

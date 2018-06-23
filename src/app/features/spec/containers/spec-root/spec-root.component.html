@@ -1,10 +1,10 @@
-<ng-container *ngIf="route.params | async as params">
+<div class="spec-root" *ngIf="route.params | async as params">
   <form class="specification">
     <mat-form-field>
       <mat-select
-          placeholder="Specification" name="specification"
-          [value]="params.specification"
-          (selectionChange)="router.navigate(['/spec', $event.value,  0, 0, 0])"
+        placeholder="Specification" name="specification"
+        [value]="params.specification"
+        (selectionChange)="router.navigate(['/spec', $event.value,  0, 0, 0])"
       >
         <mat-option [value]="'websocket'">WebSocket</mat-option>
         <mat-option [value]="'restapi'">RestApi</mat-option>
@@ -12,10 +12,10 @@
     </mat-form-field>
   </form>
   <mat-tab-group
-      [selectedIndex]="params.module"
-      (selectedIndexChange)="router.navigate(['/spec', params.specification, $event, 0, 0])"
-      *ngIf="messages$ | async as messages"
-    >
+    [selectedIndex]="params.module"
+    (selectedIndexChange)="router.navigate(['/spec', params.specification, $event, 0, 0])"
+    *ngIf="messages$ | async as messages"
+  >
     <mat-tab [label]="message.name" *ngFor="let message of messages">
       <ng-template matTabContent>
         <mat-card class="spec-card shadowed">
@@ -27,9 +27,9 @@
           <mat-card-content>
             <mat-accordion class="spec-headers-align">
               <mat-expansion-panel
-                  [expanded]="params.action == idx"
-                  (opened)="router.navigate(['/spec', params.specification, params.module, idx, params.tab])"
-                  *ngFor="let spec of message.spec;let idx = index"
+                [expanded]="params.action == idx"
+                (opened)="router.navigate(['/spec', params.specification, params.module, idx, params.tab])"
+                *ngFor="let spec of message.spec;let idx = index"
               >
                 <mat-expansion-panel-header>
                   <mat-panel-title>
@@ -44,8 +44,8 @@
                 </mat-expansion-panel-header>
                 <p>{{spec.description}}</p>
                 <mat-tab-group
-                    [selectedIndex]="params.tab"
-                    (selectedIndexChange)="router.navigate(['/spec', params.specification, params.module, params.action, $event])"
+                  [selectedIndex]="params.tab"
+                  (selectedIndexChange)="router.navigate(['/spec', params.specification, params.module, params.action, $event])"
                 >
                   <mat-tab label="FIELDS" *ngIf="isNotEmpty(spec.fields)">
                     <spec-fields [fields]="spec.fields"></spec-fields>
@@ -84,4 +84,4 @@
       </ng-template>
     </mat-tab>
   </mat-tab-group>
-</ng-container>
+</div>

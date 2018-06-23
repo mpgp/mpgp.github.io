@@ -1,40 +1,67 @@
 {
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "[todo]": {
+    "editor.tabSize": 4
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": false,
+  "editor.insertSpaces": true,
+  "editor.matchBrackets": false,
+  "editor.tabSize": 2,
+  "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "files.exclude": {
     "**/node_modules": true,
     "node_modules": true
   },
-  "explorer.confirmDelete": false,
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
-  "editor.formatOnSave": false,
-  "editor.matchBrackets": false,
-  "typescript.reportStyleChecksAsWarnings": true,
-  "[javascript]": {
-    "editor.formatOnSave": true
-  },
-  "[typescript]": {
-    "editor.formatOnSave": true
-  },
-  "[scss]": {
-    "editor.formatOnSave": true
-  },
-  "[css]": {
-    "editor.formatOnSave": true
-  },
-  "[todo]": {
-    "editor.tabSize": 4,
+  "stylelint.config": {
+    "extends": "./src/.stylelintrc/app.json"
   },
   "todo.file": ".ToDo",
   "todo.indentation": "    ",
-  "todo.tags.names": ["critical", "high", "low", "today", "feature", "bug", "chore", "refactoring"],
-  "todo.tags.backgroundColors": ["#e54545", "#e59f45", "#e5d145", "#ae81ff", "#7777ff", "#45ff45", "#aaaaaa", "#ffffff"],
-  "todo.tags.foregroundColors": ["#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000"],
+  "todo.statistics.project.text": "([pending])  [done]/[cancelled]/[finished]",
+  "todo.statistics.statusbar.command": "todo.openEmbedded",
+  "todo.tags.backgroundColors": [
+    "#45ff45",
+    "#7777ff",
+    "#aaaaaa",
+    "#ae81ff",
+    "#e54545",
+    "#e59f45",
+    "#e5d145",
+    "#ffffff"
+  ],
+  "todo.tags.foregroundColors": [
+    "#000000",
+    "#000000",
+    "#000000",
+    "#000000",
+    "#000000",
+    "#000000",
+    "#000000",
+    "#000000"
+  ],
+  "todo.tags.names": [
+    "bug",
+    "chore",
+    "critical",
+    "feature",
+    "high",
+    "low",
+    "refactoring",
+    "today"
+  ],
   "todo.timekeeping.created.enabled": true,
   "todo.timekeeping.created.format": "YY-MM-DD HH:mm:ss",
-  "todo.timekeeping.started.format": "YY-MM-DD HH:mm:ss",
   "todo.timekeeping.finished.format": "YY-MM-DD HH:mm:ss",
-  "todo.statistics.project.text": "([pending])  [done]/[cancelled]/[finished]", 
-  "todo.statistics.statusbar.command": "todo.openEmbedded",
+  "todo.timekeeping.started.format": "YY-MM-DD HH:mm:ss",
+  "typescript.reportStyleChecksAsWarnings": true
 }

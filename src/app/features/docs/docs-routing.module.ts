@@ -9,4 +9,4 @@ const routes: Routes = [{ path: '', component: DocsRootComponent }, { path: ':id
   exports: [RouterModule],
   imports: [RouterModule.forChild(routes)],
 })
-export class DocsRoutingModule {}
+export class DocsRoutingModule { }

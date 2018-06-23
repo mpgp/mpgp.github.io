@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Cacheable } from '@core/services/cache.service';
+import { Cacheable } from '~/core/services/cache.service';
 
 import { Message } from '../models/message';
 
 @Injectable()
 export class SpecService {
-  constructor(private readonly http: HttpClient) {}
+  constructor(private readonly http: HttpClient) { }
 
   @Cacheable()
   getMessages(specification: string): Observable<Message[]> {

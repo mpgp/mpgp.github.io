@@ -1,18 +1,18 @@
-spec-root {
-  .spec-headers-align .mat-expansion-panel-header-title, 
+.spec-root {
+  .spec-headers-align .mat-expansion-panel-header-title,
   .spec-headers-align .mat-expansion-panel-header-description {
     flex-basis: 0;
   }
 
   .spec-headers-align .mat-expansion-panel-header-description {
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
   .mat-chip-list-wrapper {
-    margin: 0px;
+    margin: 0;
   }
-  
+
   .specification {
     margin: 20px 20px 0;
   }

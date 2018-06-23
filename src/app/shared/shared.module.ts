@@ -12,4 +12,4 @@ const sharedModules = [CommonModule, FormsModule];
   declarations: [...components, ...containers],
   exports: [MaterialModule, ...components, ...containers, ...sharedModules],
 })
-export class SharedModule {}
+export class SharedModule { }
