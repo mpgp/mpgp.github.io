@@ -4,10 +4,10 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEn
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'app-sidenav-content',
-  templateUrl: './app-sidenav-content.component.html',
+  selector: 'main-sidenav-content',
+  templateUrl: './main-sidenav-content.component.html',
 })
-export class AppSidenavContentComponent {
+export class MainSidenavContentComponent {
   @Input() isHandset: BreakpointState;
 
   @Output() toggle = new EventEmitter<boolean>(true);

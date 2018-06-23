@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { Observable, of, Subject, throwError } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -7,7 +6,8 @@ interface CacheContent<T> {
   value: T;
 }
 
-@Injectable()
+// Non-injectable.
+// Do not provide this service to modules.
 export class CacheService {
   /* tslint:disable:no-any */
   private readonly cache = new Map<string, CacheContent<any>>();

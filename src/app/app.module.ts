@@ -1,19 +1,22 @@
 import { LayoutModule } from '@angular/cdk/layout';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from '~/core/core.module';
-import { SharedModule } from '~/shared/shared.module';
+import { MainModule } from '~/main/main.module';
 
-import { AppRoutingModule } from './app-routing.module';
-import { components } from './components';
-import { AppRootComponent, containers } from './containers';
+import { AppComponent } from './app.component';
+
+const bootstrap = [AppComponent];
+
+const declarations = [AppComponent];
+
+const imports = [BrowserAnimationsModule, BrowserModule, CoreModule, LayoutModule, MainModule];
 
 @NgModule({
-  bootstrap: [AppRootComponent],
-  declarations: [...components, ...containers],
-  imports: [AppRoutingModule, BrowserAnimationsModule, BrowserModule, CoreModule, HttpClientModule, LayoutModule, SharedModule],
+  bootstrap,
+  declarations,
+  imports,
 })
-export class AppModule { }
+export class AppModule {}

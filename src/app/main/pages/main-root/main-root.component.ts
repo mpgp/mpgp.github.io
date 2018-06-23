@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'app-root',
-  styleUrls: ['./app-root.component.scss'],
-  templateUrl: './app-root.component.html',
+  selector: 'main-root',
+  styleUrls: ['./main-root.component.scss'],
+  templateUrl: './main-root.component.html',
 })
-export class AppRootComponent {
+export class MainRootComponent {
   isHandset$: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
 
-  constructor(private readonly breakpointObserver: BreakpointObserver) { }
+  constructor(private readonly breakpointObserver: BreakpointObserver) {}
 }

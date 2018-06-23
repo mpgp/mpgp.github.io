@@ -1,16 +1,42 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
-import { SharedModule } from '~/shared/shared.module';
-
-import { SpecService } from './services/spec.service';
-import { SpecRoutingModule } from './spec-routing.module';
+import {
+  MatCardModule,
+  MatChipsModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatIconModule,
+  MatListModule,
+  MatSelectModule,
+  MatTabsModule,
+} from '@angular/material';
 
 import { components } from './components';
 import { containers } from './containers';
+import { pages } from './pages';
+import { SpecService } from './services/spec.service';
+import { SpecRoutingModule } from './spec-routing.module';
+
+const declarations = [...components, ...containers, ...pages];
+
+const imports = [
+  CommonModule,
+  SpecRoutingModule,
+  MatCardModule,
+  MatChipsModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatIconModule,
+  MatListModule,
+  MatSelectModule,
+  MatTabsModule,
+];
+
+const providers = [SpecService];
 
 @NgModule({
-  declarations: [...components, ...containers],
-  imports: [SpecRoutingModule, SharedModule],
-  providers: [SpecService],
+  declarations,
+  imports,
+  providers,
 })
-export class SpecModule { }
+export class SpecModule {}

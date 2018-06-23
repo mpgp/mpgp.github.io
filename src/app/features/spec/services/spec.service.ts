@@ -9,7 +9,7 @@ import { Message } from '../models/message';
 
 @Injectable()
 export class SpecService {
-  constructor(private readonly http: HttpClient) { }
+  constructor(private readonly http: HttpClient) {}
 
   @Cacheable()
   getMessages(specification: string): Observable<Message[]> {

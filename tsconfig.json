@@ -13,6 +13,7 @@
       "~/core/*": ["app/core/*"],
       "~/env/*": ["environments/*"],
       "~/features/*": ["features/*"],
+      "~/main/*": ["app/main/*"],
       "~/shared/*": ["app/shared/*"]
     },
     "outDir": "./dist/out-tsc",

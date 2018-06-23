@@ -7,12 +7,12 @@
     [mode]="isHandset!.matches ? 'over' : 'side'"
     [opened]="!isHandset!.matches"
   >
-    <app-sidenav></app-sidenav>
+    <main-sidenav></main-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-sidenav-content [isHandset]="isHandset" (toggle)="drawer.toggle();">
+    <main-sidenav-content [isHandset]="isHandset" (toggle)="drawer.toggle();">
       <router-outlet></router-outlet>
-    </app-sidenav-content>
-    <app-scroll-to-top></app-scroll-to-top>
+    </main-sidenav-content>
+    <main-scroll-to-top></main-scroll-to-top>
   </mat-sidenav-content>
 </mat-sidenav-container>

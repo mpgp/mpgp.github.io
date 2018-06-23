@@ -3,11 +3,11 @@ import { ChangeDetectionStrategy, Component, HostListener, ViewEncapsulation } f
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'app-scroll-to-top',
-  styleUrls: ['./app-scroll-to-top.component.scss'],
-  templateUrl: './app-scroll-to-top.component.html',
+  selector: 'main-scroll-to-top',
+  styleUrls: ['./main-scroll-to-top.component.scss'],
+  templateUrl: './main-scroll-to-top.component.html',
 })
-export class AppScrollToTopComponent {
+export class MainScrollToTopComponent {
   showScroll = false;
 
   @HostListener('window:scroll', [])
