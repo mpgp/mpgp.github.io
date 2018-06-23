@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, NgZone, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
@@ -10,19 +10,30 @@ import { filter, map, takeUntil } from 'rxjs/operators';
   styleUrls: ['./docs-root.component.scss'],
   templateUrl: './docs-root.component.html',
 })
-export class DocsRootComponent implements OnInit, OnDestroy {
+export class DocsRootComponent implements AfterViewInit, OnDestroy {
   private readonly componentDestroyed$ = new Subject<boolean>();
 
-  constructor(private readonly route: ActivatedRoute) {}
+  isFirstScroll = true;
 
-  ngOnInit(): void {
+  constructor(private readonly route: ActivatedRoute, private readonly ngZone: NgZone) {}
+
+  ngAfterViewInit(): void {
     this.route.params
       .pipe(
         takeUntil(this.componentDestroyed$),
         map(({ id }) => document.getElementById(id)),
         filter(element => !!element),
       )
-      .subscribe(element => element.scrollIntoView());
+      .subscribe(element => {
+        element.scrollIntoView();
+
+        if (this.isFirstScroll) {
+          this.isFirstScroll = false;
+          this.ngZone.runOutsideAngular(() => {
+            setTimeout(() => element.scrollIntoView(), 500);
+          });
+        }
+      });
   }
 
   ngOnDestroy(): void {

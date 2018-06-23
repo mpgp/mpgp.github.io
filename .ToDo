@@ -4,9 +4,6 @@ mpgp.github.io:
     In Progress:
 
         @low @refactoring
-        ☐ refactor(docs): split chapters by mat-card in docs-root.component.html @created(18-06-12 20:44:45)
-
-        @low @refactoring
         ☐ refactor(spec): decomposite spec-root to small components @created(18-06-12 20:44:43)
 
         @low
