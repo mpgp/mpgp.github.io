@@ -5,7 +5,7 @@ import { SpecRootComponent } from './pages';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'websocket/0/0/0' },
-  { path: ':specification/:module/:action/:tab', component: SpecRootComponent },
+  { path: ':schema/:module/:action/:tab', component: SpecRootComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,17 @@
+<mat-tab-group
+  [selectedIndex]="params.tab"
+  (selectedIndexChange)="onNavigated(params.schema, params.module, params.action, $event)"
+>
+  <mat-tab label="FIELDS" *ngIf="isNotEmpty(spec.fields)">
+    <spec-tab-fields [fields]="spec.fields"></spec-tab-fields>
+  </mat-tab>
+  <mat-tab label="EXAMPLE" *ngIf="isNotEmpty(spec.clientMessage)">
+    <spec-code [jsonData]="spec.clientMessage"></spec-code>
+  </mat-tab>
+  <mat-tab label="SUCCESS" *ngIf="isNotEmpty(spec.serverMessage.success)">
+    <spec-tab-success [response]="spec.serverMessage.success"></spec-tab-success>
+  </mat-tab>
+  <mat-tab label="ERROR" *ngIf="spec.serverMessage.errors.length">
+    <spec-tab-error [errors]="spec.serverMessage.errors"></spec-tab-error>
+  </mat-tab>
+</mat-tab-group>

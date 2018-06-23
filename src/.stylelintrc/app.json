@@ -27,5 +27,6 @@
       "s"
     ],
     "value-keyword-case": "lower"
-  }
+  },
+  "ignoreFiles": "../../dist/**"
 }

@@ -5,10 +5,10 @@ import { Field } from '../../models/field';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'spec-fields',
-  styleUrls: ['./spec-fields.component.scss'],
-  templateUrl: './spec-fields.component.html',
+  selector: 'spec-tab-fields',
+  styleUrls: ['./spec-tab-fields.component.scss'],
+  templateUrl: './spec-tab-fields.component.html',
 })
-export class SpecFieldsComponent {
+export class SpecTabFieldsComponent {
   @Input() fields: Field[];
 }

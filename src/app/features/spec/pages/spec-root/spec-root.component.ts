@@ -20,13 +20,13 @@ export class SpecRootComponent implements OnInit {
 
   ngOnInit(): void {
     this.messages$ = this.route.params.pipe(
-      map(({ specification }) => specification),
+      map(({ schema }) => schema),
       distinctUntilChanged(),
-      switchMap(specification => this.specService.getMessages(specification)),
+      switchMap(schema => this.specService.getMessages(schema)),
     );
   }
 
-  isNotEmpty(obj: object): boolean {
-    return Object.keys(obj).length !== 0;
+  onNavigated(schema: string, _module: number, action: number, tab: number): void {
+    this.router.navigate(['/spec', schema, _module, action, tab]).catch(reason => console.error(reason));
   }
 }

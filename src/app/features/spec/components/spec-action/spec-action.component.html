@@ -1,0 +1,25 @@
+<mat-accordion class="spec-headers-align">
+  <mat-expansion-panel
+    [expanded]="params.action == idx"
+    (opened)="onNavigated(params.schema, params.module, idx, params.tab)"
+    *ngFor="let spec of message.spec;let idx = index"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-chip-list>
+          <spec-chip [verb]="spec.verb"></spec-chip>
+          {{spec.name}}
+        </mat-chip-list>
+      </mat-panel-title>
+      <mat-panel-description>
+        {{spec.summary}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{spec.description}}</p>
+    <spec-action-tabs
+      [spec]="spec"
+      [params]="params"
+      (navigated)="onNavigated($event.schema, $event.module, $event.action, $event.tab)"
+    ></spec-action-tabs>
+  </mat-expansion-panel>
+</mat-accordion>

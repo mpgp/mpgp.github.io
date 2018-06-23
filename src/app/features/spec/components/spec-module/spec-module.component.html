@@ -1,0 +1,14 @@
+<mat-card class="spec-card shadowed">
+  <mat-card-header>
+    <div mat-card-avatar class="spec-header-image"><mat-icon color="primary">{{message.icon}}</mat-icon></div>
+    <mat-card-title>{{message.name}}</mat-card-title>
+    <mat-card-subtitle>{{message.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <spec-action
+      [message]="message"
+      [params]="params"
+      (navigated)="onNavigated($event)"
+    ></spec-action>
+  </mat-card-content>
+</mat-card>

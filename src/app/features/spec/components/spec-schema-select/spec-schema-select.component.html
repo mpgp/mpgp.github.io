@@ -1,0 +1,12 @@
+<form class="spec-schema-select">
+  <mat-form-field>
+    <mat-select
+      placeholder="Schema" name="schema"
+      [value]="currentSchema"
+      (selectionChange)="onSelectionChange($event.value)"
+    >
+      <mat-option [value]="'websocket'">WebSocket</mat-option>
+      <mat-option [value]="'restapi'">RestApi</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

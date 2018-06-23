@@ -12,9 +12,9 @@ export class SpecService {
   constructor(private readonly http: HttpClient) {}
 
   @Cacheable()
-  getMessages(specification: string): Observable<Message[]> {
+  getMessages(schema: string): Observable<Message[]> {
     return this.http
-      .get<{ messages: Message[] }>(`assets/${specification}.json`)
+      .get<{ messages: Message[] }>(`assets/${schema}.json`)
       .pipe(map(data => data.messages.map(message => new Message(message))));
   }
 }

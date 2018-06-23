@@ -1,0 +1,7 @@
+<mat-chip-list>
+  <mat-chip color="accent" selected="true" *ngIf="response.status">
+    {{response.status}}
+  </mat-chip>
+  {{response.description}}
+</mat-chip-list>
+<spec-code [jsonData]="response.data"></spec-code>

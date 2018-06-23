@@ -1,0 +1,12 @@
+<div *ngFor="let error of errors; let last = last">
+  <mat-chip-list>
+    <mat-chip color="warn" selected="true" *ngIf="error.status">{{error.status}}</mat-chip>
+    {{error.description}}
+  </mat-chip-list>
+  <spec-code [jsonData]="error.data"></spec-code>
+  <ng-container *ngIf="!last">
+    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
+    <br />
+  </ng-container>
+</div>
