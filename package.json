@@ -34,6 +34,7 @@
         "always",
         [
           "core",
+          "main",
           "shared",
           "docs",
           "spec"
