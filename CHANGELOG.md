@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/mpgp/mpgp.github.io/compare/v1.1.0...v1.1.1) (2018-06-24)
+
+
+### Bug Fixes
+
+* **spec:** update regex for nickname ([57862b0](https://github.com/mpgp/mpgp.github.io/commit/57862b0))
+
 # [1.1.0](https://github.com/mpgp/mpgp.github.io/compare/v1.0.0...v1.1.0) (2018-06-16)
 
 
