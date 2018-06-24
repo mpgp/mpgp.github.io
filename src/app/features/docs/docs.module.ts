@@ -8,7 +8,9 @@ import { pages } from './pages';
 
 const declarations = [...components, ...containers, ...pages];
 
-const imports = [DocsRoutingModule, MatCardModule, MatIconModule, MatListModule];
+export const vendorImports = [MatCardModule, MatIconModule, MatListModule];
+
+const imports = [DocsRoutingModule, ...vendorImports];
 
 @NgModule({
   declarations,

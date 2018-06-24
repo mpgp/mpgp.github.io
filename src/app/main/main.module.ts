@@ -14,19 +14,9 @@ import { MainRootComponent, pages } from './pages';
 
 const declarations = [...components, ...containers, ...pages];
 
-const imports = [
-  MainRoutingModule,
-  BrowserAnimationsModule,
-  BrowserModule,
-  CoreModule,
-  HttpClientModule,
-  LayoutModule,
-  MatDividerModule,
-  MatIconModule,
-  MatListModule,
-  MatSidenavModule,
-  MatToolbarModule,
-];
+export const vendorImports = [MatDividerModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule];
+
+const imports = [MainRoutingModule, BrowserAnimationsModule, BrowserModule, CoreModule, HttpClientModule, LayoutModule, ...vendorImports];
 
 const _exports = [MainRootComponent];
 

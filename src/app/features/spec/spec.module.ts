@@ -19,9 +19,7 @@ import { SpecRoutingModule } from './spec-routing.module';
 
 const declarations = [...components, ...containers, ...pages];
 
-const imports = [
-  CommonModule,
-  SpecRoutingModule,
+export const vendorImports = [
   MatCardModule,
   MatChipsModule,
   MatDividerModule,
@@ -31,6 +29,8 @@ const imports = [
   MatSelectModule,
   MatTabsModule,
 ];
+
+const imports = [CommonModule, SpecRoutingModule, ...vendorImports];
 
 const providers = [SpecService];
 

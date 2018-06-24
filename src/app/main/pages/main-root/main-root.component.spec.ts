@@ -5,11 +5,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MainRootComponent, pages } from '../';
 import { components } from '../../components';
 import { containers } from '../../containers';
+import { vendorImports } from '../../main.module';
 
 describe('MainRootComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, RouterTestingModule],
+      imports: [NoopAnimationsModule, RouterTestingModule, ...vendorImports],
       declarations: [...components, ...containers, ...pages],
     }).compileComponents();
   }));
@@ -24,7 +25,7 @@ describe('MainRootComponent', () => {
     const fixture = TestBed.createComponent(MainRootComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    const title = compiled.querySelector('mat-sidenav-container > mat-sidenav-content > app-sidenav-content > mat-toolbar > span');
+    const title = compiled.querySelector('mat-sidenav-container > mat-sidenav-content > main-sidenav-content > mat-toolbar > span');
     expect(title.textContent).toContain('MPGP Documentation');
   }));
 });
