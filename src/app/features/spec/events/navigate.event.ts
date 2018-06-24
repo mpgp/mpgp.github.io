@@ -1,10 +1,10 @@
-export class NavigatedEvent {
+export class NavigateEvent {
   action: number;
   module: number;
   schema: string;
   tab: number;
 
-  constructor(json: NavigatedEvent = null) {
+  constructor(json: NavigateEvent = null) {
     this.action = json.action;
     this.module = json.module;
     this.schema = json.schema;

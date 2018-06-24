@@ -1,11 +1,11 @@
 <div class="spec-root" *ngIf="route.params | async as params">
   <spec-schema-select
-    (selectionChange)="onNavigated($event, 0, 0, 0)"
+    (schemaChange)="onNavigate($event, 0, 0, 0)"
     [currentSchema]="params.schema"
   ></spec-schema-select>
   <mat-tab-group
     [selectedIndex]="params.module"
-    (selectedIndexChange)="onNavigated(params.schema, $event, 0, 0)"
+    (selectedIndexChange)="onNavigate(params.schema, $event, 0, 0)"
     *ngIf="messages$ | async as messages"
   >
     <mat-tab [label]="message.name" *ngFor="let message of messages">
@@ -13,7 +13,7 @@
         <spec-module
           [message]="message"
           [params]="params"
-          (navigated)="onNavigated($event.schema, $event.module, $event.action, $event.tab)"
+          (navigate)="onNavigate($event.schema, $event.module, $event.action, $event.tab)"
         ></spec-module>
       </ng-template>
     </mat-tab>

@@ -1,6 +1,6 @@
 <mat-tab-group
   [selectedIndex]="params.tab"
-  (selectedIndexChange)="onNavigated(params.schema, params.module, params.action, $event)"
+  (selectedIndexChange)="onNavigate(params.schema, params.module, params.action, $event)"
 >
   <mat-tab label="FIELDS" *ngIf="isNotEmpty(spec.fields)">
     <spec-tab-fields [fields]="spec.fields"></spec-tab-fields>

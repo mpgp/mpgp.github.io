@@ -26,7 +26,7 @@ export class SpecRootComponent implements OnInit {
     );
   }
 
-  onNavigated(schema: string, _module: number, action: number, tab: number): void {
+  onNavigate(schema: string, _module: number, action: number, tab: number): void {
     this.router.navigate(['/spec', schema, _module, action, tab]).catch(reason => console.error(reason));
   }
 }

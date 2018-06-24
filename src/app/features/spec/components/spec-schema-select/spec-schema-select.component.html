@@ -3,7 +3,7 @@
     <mat-select
       placeholder="Schema" name="schema"
       [value]="currentSchema"
-      (selectionChange)="onSelectionChange($event.value)"
+      (selectionChange)="onSchemaChange($event.value)"
     >
       <mat-option [value]="'websocket'">WebSocket</mat-option>
       <mat-option [value]="'restapi'">RestApi</mat-option>

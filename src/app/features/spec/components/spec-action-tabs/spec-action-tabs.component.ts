@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
-import { NavigatedEvent } from '../../events/navigated.event';
+import { NavigateEvent } from '../../events/navigate.event';
 import { MessageSpec } from '../../models/message-spec';
 
 @Component({
@@ -11,15 +11,15 @@ import { MessageSpec } from '../../models/message-spec';
 })
 export class SpecActionTabsComponent {
   @Input() spec: MessageSpec;
-  @Input() params: NavigatedEvent;
+  @Input() params: NavigateEvent;
 
-  @Output() navigated = new EventEmitter<NavigatedEvent>();
+  @Output() navigate = new EventEmitter<NavigateEvent>();
 
   isNotEmpty(obj: object): boolean {
     return Object.keys(obj).length !== 0;
   }
 
-  onNavigated(schema: string, module: number, action: number, tab: number): void {
-    this.navigated.emit(new NavigatedEvent({ schema, module, action, tab }));
+  onNavigate(schema: string, module: number, action: number, tab: number): void {
+    this.navigate.emit(new NavigateEvent({ schema, module, action, tab }));
   }
 }

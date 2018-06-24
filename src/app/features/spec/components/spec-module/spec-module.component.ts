@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
-import { NavigatedEvent } from '../../events/navigated.event';
+import { NavigateEvent } from '../../events/navigate.event';
 import { Message } from '../../models/message';
 
 @Component({
@@ -11,11 +11,11 @@ import { Message } from '../../models/message';
 })
 export class SpecModuleComponent {
   @Input() message: Message;
-  @Input() params: NavigatedEvent;
+  @Input() params: NavigateEvent;
 
-  @Output() navigated = new EventEmitter<NavigatedEvent>();
+  @Output() navigate = new EventEmitter<NavigateEvent>();
 
-  onNavigated(params: NavigatedEvent): void {
-    this.navigated.emit(params);
+  onNavigate(params: NavigateEvent): void {
+    this.navigate.emit(params);
   }
 }

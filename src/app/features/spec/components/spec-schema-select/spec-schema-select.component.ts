@@ -10,9 +10,9 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEn
 export class SpecSchemaSelectComponent {
   @Input() currentSchema: string;
 
-  @Output() selectionChange = new EventEmitter<string>();
+  @Output() schemaChange = new EventEmitter<string>();
 
-  onSelectionChange(schema: string): void {
-    this.selectionChange.emit(schema);
+  onSchemaChange(schema: string): void {
+    this.schemaChange.emit(schema);
   }
 }

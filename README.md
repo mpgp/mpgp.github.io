@@ -19,6 +19,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [![Coverage Status](https://coveralls.io/repos/github/mpgp/mpgp.github.io/badge.svg?branch=src)](https://coveralls.io/github/mpgp/mpgp.github.io?branch=src)
 [![Known Vulnerabilities](https://snyk.io/test/github/mpgp/mpgp.github.io/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mpgp/mpgp.github.io?targetFile=package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/mpgp/mpgp.github.io.svg)](https://greenkeeper.io/)
 
+## Install packages
+
+```sh
+yarn install
+yarn add --global @angular/cli
+```
+
 ## Development server
 
 Run `yarn run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

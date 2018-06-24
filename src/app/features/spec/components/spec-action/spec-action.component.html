@@ -1,7 +1,7 @@
 <mat-accordion class="spec-headers-align">
   <mat-expansion-panel
     [expanded]="params.action == idx"
-    (opened)="onNavigated(params.schema, params.module, idx, params.tab)"
+    (opened)="onNavigate(params.schema, params.module, idx, params.tab)"
     *ngFor="let spec of message.spec;let idx = index"
   >
     <mat-expansion-panel-header>
@@ -19,7 +19,7 @@
     <spec-action-tabs
       [spec]="spec"
       [params]="params"
-      (navigated)="onNavigated($event.schema, $event.module, $event.action, $event.tab)"
+      (navigate)="onNavigate($event.schema, $event.module, $event.action, $event.tab)"
     ></spec-action-tabs>
   </mat-expansion-panel>
 </mat-accordion>
