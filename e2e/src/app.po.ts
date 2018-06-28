@@ -7,6 +7,6 @@ export class AppPage {
   }
 
   getParagraphText(): any {
-    return element(by.css('app-root > mat-sidenav-container > mat-sidenav-content > app-sidenav-content > mat-toolbar > span')).getText();
+    return element(by.css('main-root > mat-sidenav-container > mat-sidenav-content > main-sidenav-content > mat-toolbar > span')).getText();
   }
 }
