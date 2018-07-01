@@ -65,9 +65,18 @@
       "serverMessage":{
         "success":{
           "status":200,
-          "description":"Returns the authtoken of registered account.",
+          "description":"Returns the info of registered account.",
           "data":{
-            "authToken":"392c2a901720d24e26be260ec331632f"
+            "authToken":"392c2a901720d24e26be260ec331632f",
+            "user": {
+              "accountId":1,
+              "avatar":"29.jpg",
+              "languages":"EN, RU",
+              "lastOnline": "2018-04-04T00:00:00",
+              "nickname": "AlexAnder",
+              "registerDate": "2018-01-01T00:00:00",
+              "statusInfo": "Life begins at the end of your comfort zone."
+            }
           }
         },
         "errors":[{
@@ -163,9 +172,18 @@
       "serverMessage":{
         "success":{
           "status":201,
-          "description":"Returns the authtoken of newly registered account.",
+          "description":"Returns the info of newly registered account.",
           "data":{
-            "authToken":"392c2a901720d24e26be260ec331632f"
+            "authToken":"392c2a901720d24e26be260ec331632f",
+            "user": {
+              "accountId":1,
+              "avatar":"29.jpg",
+              "languages":"EN, RU",
+              "lastOnline": "2018-04-04T00:00:00",
+              "nickname": "AlexAnder",
+              "registerDate": "2018-01-01T00:00:00",
+              "statusInfo": "Life begins at the end of your comfort zone."
+            }
           }
         },
         "errors":[{
