@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/mpgp/mpgp.github.io/compare/v1.1.1...v1.1.2) (2018-07-08)
+
+
+### Bug Fixes
+
+* **spec:** update ws/api specification ([ec0c402](https://github.com/mpgp/mpgp.github.io/commit/ec0c402))
+
 ## [1.1.1](https://github.com/mpgp/mpgp.github.io/compare/v1.1.0...v1.1.1) (2018-06-24)
 
 
