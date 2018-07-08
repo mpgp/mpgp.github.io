@@ -67,7 +67,7 @@
           "status":200,
           "description":"Returns the info of registered account.",
           "data":{
-            "authToken":"392c2a901720d24e26be260ec331632f",
+            "access_token":"392c2a901720d24e26be260ec331632f",
             "user": {
               "accountId":1,
               "avatar":"29.jpg",
@@ -174,7 +174,7 @@
           "status":201,
           "description":"Returns the info of newly registered account.",
           "data":{
-            "authToken":"392c2a901720d24e26be260ec331632f",
+            "access_token":"392c2a901720d24e26be260ec331632f",
             "user": {
               "accountId":1,
               "avatar":"29.jpg",
@@ -199,39 +199,6 @@
           "data":{
             "errorCode": 409,
             "message": "Conflict"
-          }
-        }]
-      }
-    },{
-      "verb":"PATCH",
-      "name":"/api/account",
-      "summary":"Validate a token of exists account.",
-      "description":"Checks an auth token and returns status 200 if success else returns 404.",
-      "fields":[{
-        "name":"authToken",
-        "type":"string",
-        "description":"",
-        "required":true,
-        "validators":[
-          {"name":"maxLength","value":64}
-        ]
-      }],
-      "clientMessage":{
-        "login": "admin2018",
-        "password": "12345678asdf"
-      },
-      "serverMessage":{
-        "success":{
-          "status":200,
-          "description":"If the token is valid.",
-          "data":null
-        },
-        "errors":[{
-          "status":404,
-          "description":"If the token was not found.",
-          "data":{
-            "errorCode": 404,
-            "message": "NotFound"
           }
         }]
       }
