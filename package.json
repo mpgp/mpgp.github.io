@@ -127,7 +127,7 @@
     "@angular/router": "6.0.7",
     "core-js": "2.5.7",
     "rxjs": "6.2.1",
-    "stylelint": "9.3.0",
+    "stylelint": "9.4.0",
     "stylelint-order": "0.8.1",
     "zone.js": "0.8.26"
   },
