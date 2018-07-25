@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/mpgp/mpgp.github.io/compare/v1.1.2...v1.2.0) (2018-07-25)
+
+
+### Bug Fixes
+
+* **spec:** hide block of code if the jsonData is empty ([9727038](https://github.com/mpgp/mpgp.github.io/commit/9727038))
+
+
+### Features
+
+* **spec:** add account management on api ([ac6c60f](https://github.com/mpgp/mpgp.github.io/commit/ac6c60f))
+
 ## [1.1.2](https://github.com/mpgp/mpgp.github.io/compare/v1.1.1...v1.1.2) (2018-07-08)
 
 
