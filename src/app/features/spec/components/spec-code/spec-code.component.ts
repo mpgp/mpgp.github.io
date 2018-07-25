@@ -9,4 +9,8 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
 })
 export class SpecCodeComponent {
   @Input() jsonData: object;
+
+  get hasData(): boolean {
+    return Object.keys(this.jsonData || {}).length > 0;
+  }
 }
