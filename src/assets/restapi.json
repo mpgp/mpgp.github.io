@@ -210,13 +210,122 @@
     "spec":[{
       "verb":"POST",
       "name":"/api/manage",
-      "summary":"Change a password for your account.",
-      "description":"So soon...",
-      "fields":[],
-      "clientMessage":{},
+      "summary":"Change an account data.",
+      "description":"Requires authorization",
+      "fields":[{
+        "name":"avatar",
+        "type":"string",
+        "description":"",
+        "required":true,
+        "validators":[
+          {"name":"maxLength","value":249}
+        ]
+      },{
+        "name":"languages",
+        "type":"string",
+        "description":"",
+        "required":true,
+        "validators":[
+          {"name":"maxLength","value":249}
+        ]
+      },{
+        "name":"nickname",
+        "type":"string",
+        "description":"",
+        "required":true,
+        "validators":[
+          {"name":"maxLength","value":20},
+          {"name":"minLength","value":3},
+          {"name":"pattern","value":"^[^\\s].{1,18}[^\\s]$"}
+        ]
+      },{
+        "name":"statusInfo",
+        "type":"string",
+        "description":"",
+        "required":true,
+        "validators":[
+          {"name":"maxLength","value":249}
+        ]
+      }],
+      "clientMessage":{
+        "avatar": "1.jpg",
+        "languages": "RUSSIAN",
+        "nickname": "admin2018",
+        "statusInfo": "Never be afraid to change something in your life. Sometimes it's useful."
+      },
       "serverMessage":{
-        "success":{},
-        "errors":[]
+        "success":{
+          "status":200,
+          "description":"Returns empty result with status 200 OK."
+        },
+        "errors":[{
+          "status":400,
+          "description":"If the model is invalid.",
+          "data":{
+            "errorCode": 1,
+            "message": "Field XXX is required"
+          }
+        },{
+          "status":401,
+          "description":"If the 'Authorization' header is invalid."
+        }]
+      }
+    },{
+      "verb":"POST",
+      "name":"/api/manage/password",
+      "summary":"Change a password for your account.",
+      "description":"Requires authorization",
+      "fields":[{
+        "name":"oldPassword",
+        "type":"string",
+        "description":"",
+        "required":true,
+        "validators":[
+          {"name":"maxLength","value":249},
+          {"name":"minLength","value":8}
+        ]
+      },{
+        "name":"password",
+        "type":"string",
+        "description":"",
+        "required":true,
+        "validators":[
+          {"name":"maxLength","value":249},
+          {"name":"minLength","value":8}
+        ]
+      },{
+        "name":"passwordRepeat",
+        "type":"string",
+        "description":"",
+        "required":true,
+        "validators":[
+          {"name":"should be equal to","value":"password"}
+        ]
+      }],
+      "clientMessage":{
+        "oldPassword": "12345678",
+        "password": "t0p_s3cr3t",
+        "passwordRepeat": "t0p_s3cr3t"
+      },
+      "serverMessage":{
+        "success":{
+          "status":200,
+          "description":"Returns empty result with status 200 OK."
+        },
+        "errors":[{
+          "status":400,
+          "description":"If the model is invalid.",
+          "data":{
+            "errorCode": 1,
+            "message": "Field XXX is required"
+          }
+        },{
+          "status":401,
+          "description":"If the 'Authorization' header is invalid."
+        },{
+          "status":403,
+          "description":"If oldPassword is invalid."
+        }]
       }
     },{
       "verb":"DELETE",
