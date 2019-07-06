@@ -112,7 +112,9 @@
     "test:unit": "CHROME_BIN=google-chrome CHROME_CANARY_BIN=google-chrome ng test --watch=false --code-coverage",
     "test:e2e": "CHROME_BIN=google-chrome CHROME_CANARY_BIN=google-chrome ng e2e",
     "ci:test": "CHROME_BIN=chromium-browser DISPLAY=:99.0 ng test --watch=false --code-coverage",
-    "ci:e2e": "CHROME_BIN=chromium-browser DISPLAY=:99.0 ng e2e"
+    "ci:e2e": "CHROME_BIN=chromium-browser DISPLAY=:99.0 ng e2e",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@angular/animations": "8.0.3",
@@ -130,7 +132,8 @@
     "rxjs": "6.5.2",
     "stylelint": "10.1.0",
     "stylelint-order": "3.0.0",
-    "zone.js": "0.9.1"
+    "zone.js": "0.9.1",
+    "snyk": "^1.192.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.800.6",
@@ -162,5 +165,6 @@
     "ts-node": "8.3.0",
     "tslint": "5.18.0",
     "typescript": "3.4.5"
-  }
+  },
+  "snyk": true
 }
