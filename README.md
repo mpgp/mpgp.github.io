@@ -23,7 +23,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ```sh
 yarn install
-yarn add --global @angular/cli
+yarn global add @angular/cli --prefix /usr/local
 ```
 
 ## Development server
