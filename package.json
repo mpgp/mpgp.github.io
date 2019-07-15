@@ -122,7 +122,7 @@
     "@angular/core": "8.0.3",
     "@angular/forms": "8.0.3",
     "@angular/http": "7.2.15",
-    "@angular/material": "8.0.1",
+    "@angular/material": "8.1.0",
     "@angular/platform-browser": "8.0.3",
     "@angular/platform-browser-dynamic": "8.0.3",
     "@angular/router": "8.0.3",
