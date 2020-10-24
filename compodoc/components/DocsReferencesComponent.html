@@ -1,0 +1,289 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>MPGP Documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">MPGP Documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DocsReferencesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/docs/components/docs-references/docs-references.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>docs-references</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./docs-references.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  selector: &#x27;docs-references&#x27;,
+  templateUrl: &#x27;./docs-references.component.html&#x27;,
+})
+export class DocsReferencesComponent {}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card class&#x3D;&quot;docs-card&quot; id&#x3D;&quot;5&quot;&gt;
+  &lt;mat-card-header&gt;
+    &lt;div mat-card-avatar&gt;
+      &lt;mat-icon color&#x3D;&quot;primary&quot;&gt;bookmarks&lt;/mat-icon&gt;
+    &lt;/div&gt;
+    &lt;mat-card-title&gt;Multiplayer Game Platform&lt;/mat-card-title&gt;
+    &lt;mat-card-subtitle&gt;
+      &lt;a routerLink&#x3D;&quot;/docs/5&quot; class&#x3D;&quot;docs-subtitle&quot;&gt;Список используемых источников&lt;/a&gt;
+    &lt;/mat-card-subtitle&gt;
+  &lt;/mat-card-header&gt;
+  &lt;mat-card-content&gt;
+    &lt;ul&gt;
+      &lt;li&gt;CLR via C# (4th Edition) (Developer Reference) by Jeffrey Richter&lt;/li&gt;
+      &lt;li&gt;Эндрю Троелсен, Язык программирования C# 5.0 и платформаNET 4.5&lt;/li&gt;
+      &lt;li&gt;Марк Симан, Внедрение зависимостей в .NET&lt;/li&gt;
+      &lt;li&gt;Саша Гольдштейн, .NET Pro Performance&lt;/li&gt;
+      &lt;li&gt;Ошероув Рой, Искусство автономного тестирования с примерами на С# &lt;/li&gt;
+      &lt;li&gt;шаблоны проектирования алан шаллоуей Джеймс р Тротт&lt;/li&gt;
+      &lt;li&gt;Design Patterns, шаблоны Фаулера&lt;/li&gt;
+      &lt;li&gt;Интерфейс: новые направления в проектировании компьютерных систем&lt;/li&gt;
+      &lt;li&gt;Приемы объектно-ориентированного проектирования - Э. Гамма&lt;/li&gt;
+      &lt;li&gt;Гради Буч: Объектно-ориентированный анализ и проектирование&lt;/li&gt;
+      &lt;li&gt;Эспозито Дино, MicrosoftNET. Архитектура корпоративных приложений&lt;/li&gt;
+      &lt;li&gt;Дональд Кнут - искусство программирования&lt;/li&gt;
+      &lt;li&gt;Джоэл Спольски - Джоэл о программировании&lt;/li&gt;
+      &lt;li&gt;Роберт Мартин «Чистый код»&lt;/li&gt;
+      &lt;li&gt;Макконнелл - Совершенный код. Мастер-класс&lt;/li&gt;
+      &lt;li&gt;JavaScript: The Definitive Guide: Activate Your Web Pages (Definitive Guides) by David Flanagan&lt;/li&gt;
+      &lt;li&gt;You Don&#x27;t Know Js (6 Book Series) by Kyle Simpson&lt;/li&gt;
+      &lt;li&gt;Joe Celko&#x27;s SQL for Smarties: Advanced SQL Programming Second Edition (The Morgan Kaufmann Series in Data Management
+        Systems) by Joe Celko&lt;/li&gt;
+      &lt;li&gt;http://softblog.violet-tape.ru/2010/02/20/pattern-specificatio/&lt;/li&gt;
+      &lt;li&gt;http://softblog.violet-tape.ru/2010/01/16/dsl-for-tdd/&lt;/li&gt;
+      &lt;li&gt;https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html&lt;/li&gt;
+      &lt;li&gt;https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.userdata(v&#x3D;vs.110).aspx&lt;/li&gt;
+      &lt;li&gt;https://www.c-sharpcorner.com/article/outputcache-action-filter-in-asp-net-mvc/&lt;/li&gt;
+      &lt;li&gt;https://programmingwithmosh.com/become-a-full-stack-dot-net-developer/&lt;/li&gt;
+      &lt;li&gt;https://blog.byndyu.ru/&lt;/li&gt;
+      &lt;li&gt;https://refactoring.guru/en&lt;/li&gt;
+      &lt;li&gt;https://learn.javascript.ru&lt;/li&gt;
+      &lt;li&gt;https://metanit.com&lt;/li&gt;
+      &lt;li&gt;http://professorweb.ru/&lt;/li&gt;
+      &lt;li&gt;http://andrey.moveax.ru/archive&lt;/li&gt;
+      &lt;li&gt;https://proglib.io/p/dotnet-digest/&lt;/li&gt;
+      &lt;li&gt;https://visualgo.net/en&lt;/li&gt;
+      &lt;li&gt;https://referencesource.microsoft.com/#mscorlib/&lt;/li&gt;
+      &lt;li&gt;https://habr.com/top/&lt;/li&gt;
+      &lt;li&gt;https://toster.ru/&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card class="docs-card" id="5">  <mat-card-header>    <div mat-card-avatar>      <mat-icon color="primary">bookmarks</mat-icon>    </div>    <mat-card-title>Multiplayer Game Platform</mat-card-title>    <mat-card-subtitle>      <a routerLink="/docs/5" class="docs-subtitle">Список используемых источников</a>    </mat-card-subtitle>  </mat-card-header>  <mat-card-content>    <ul>      <li>CLR via C# (4th Edition) (Developer Reference) by Jeffrey Richter</li>      <li>Эндрю Троелсен, Язык программирования C# 5.0 и платформаNET 4.5</li>      <li>Марк Симан, Внедрение зависимостей в .NET</li>      <li>Саша Гольдштейн, .NET Pro Performance</li>      <li>Ошероув Рой, Искусство автономного тестирования с примерами на С# </li>      <li>шаблоны проектирования алан шаллоуей Джеймс р Тротт</li>      <li>Design Patterns, шаблоны Фаулера</li>      <li>Интерфейс: новые направления в проектировании компьютерных систем</li>      <li>Приемы объектно-ориентированного проектирования - Э. Гамма</li>      <li>Гради Буч: Объектно-ориентированный анализ и проектирование</li>      <li>Эспозито Дино, MicrosoftNET. Архитектура корпоративных приложений</li>      <li>Дональд Кнут - искусство программирования</li>      <li>Джоэл Спольски - Джоэл о программировании</li>      <li>Роберт Мартин «Чистый код»</li>      <li>Макконнелл - Совершенный код. Мастер-класс</li>      <li>JavaScript: The Definitive Guide: Activate Your Web Pages (Definitive Guides) by David Flanagan</li>      <li>You Don\'t Know Js (6 Book Series) by Kyle Simpson</li>      <li>Joe Celko\'s SQL for Smarties: Advanced SQL Programming Second Edition (The Morgan Kaufmann Series in Data Management        Systems) by Joe Celko</li>      <li>http://softblog.violet-tape.ru/2010/02/20/pattern-specificatio/</li>      <li>http://softblog.violet-tape.ru/2010/01/16/dsl-for-tdd/</li>      <li>https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html</li>      <li>https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.userdata(v=vs.110).aspx</li>      <li>https://www.c-sharpcorner.com/article/outputcache-action-filter-in-asp-net-mvc/</li>      <li>https://programmingwithmosh.com/become-a-full-stack-dot-net-developer/</li>      <li>https://blog.byndyu.ru/</li>      <li>https://refactoring.guru/en</li>      <li>https://learn.javascript.ru</li>      <li>https://metanit.com</li>      <li>http://professorweb.ru/</li>      <li>http://andrey.moveax.ru/archive</li>      <li>https://proglib.io/p/dotnet-digest/</li>      <li>https://visualgo.net/en</li>      <li>https://referencesource.microsoft.com/#mscorlib/</li>      <li>https://habr.com/top/</li>      <li>https://toster.ru/</li>    </ul>  </mat-card-content></mat-card></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app'},{'name': 'DocsConclusionComponent', 'selector': 'docs-conclusion'},{'name': 'DocsDevelopmentComponent', 'selector': 'docs-development'},{'name': 'DocsIntroductionComponent', 'selector': 'docs-introduction'},{'name': 'DocsOverviewComponent', 'selector': 'docs-overview'},{'name': 'DocsReferencesComponent', 'selector': 'docs-references'},{'name': 'DocsRootComponent', 'selector': 'docs-root'},{'name': 'DocsTheoryComponent', 'selector': 'docs-theory'},{'name': 'MainRootComponent', 'selector': 'main-root'},{'name': 'MainScrollToTopComponent', 'selector': 'main-scroll-to-top'},{'name': 'MainSidenavComponent', 'selector': 'main-sidenav'},{'name': 'MainSidenavContentComponent', 'selector': 'main-sidenav-content'},{'name': 'SpecActionComponent', 'selector': 'spec-action'},{'name': 'SpecActionTabsComponent', 'selector': 'spec-action-tabs'},{'name': 'SpecChipComponent', 'selector': 'spec-chip'},{'name': 'SpecCodeComponent', 'selector': 'spec-code'},{'name': 'SpecModuleComponent', 'selector': 'spec-module'},{'name': 'SpecRootComponent', 'selector': 'spec-root'},{'name': 'SpecSchemaSelectComponent', 'selector': 'spec-schema-select'},{'name': 'SpecTabErrorComponent', 'selector': 'spec-tab-error'},{'name': 'SpecTabFieldsComponent', 'selector': 'spec-tab-fields'},{'name': 'SpecTabSuccessComponent', 'selector': 'spec-tab-success'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DocsReferencesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DocsReferencesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>MPGP Documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">MPGP Documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DocsConclusionComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/docs/components/docs-conclusion/docs-conclusion.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>docs-conclusion</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./docs-conclusion.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  selector: &#x27;docs-conclusion&#x27;,
+  templateUrl: &#x27;./docs-conclusion.component.html&#x27;,
+})
+export class DocsConclusionComponent {}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card class&#x3D;&quot;docs-card&quot; id&#x3D;&quot;4&quot;&gt;
+  &lt;mat-card-header&gt;
+    &lt;div mat-card-avatar&gt;
+      &lt;mat-icon color&#x3D;&quot;primary&quot;&gt;equalizer&lt;/mat-icon&gt;
+    &lt;/div&gt;
+    &lt;mat-card-title&gt;Multiplayer Game Platform&lt;/mat-card-title&gt;
+    &lt;mat-card-subtitle&gt;
+      &lt;a routerLink&#x3D;&quot;/docs/4&quot; class&#x3D;&quot;docs-subtitle&quot;&gt;Заключение&lt;/a&gt;
+    &lt;/mat-card-subtitle&gt;
+  &lt;/mat-card-header&gt;
+  &lt;mat-card-content&gt;
+    &lt;p&gt;В результате выполнения проекта было спроектировано и реализовано приложение «Web-чат». В состав приложения входит необходимый
+      минимум методов и функций, обеспечивающий полноценное функционирование объектов указанного класса. В процессе разработки
+      приложения все поставленные задачи были выполнены, а именно:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;проведен анализ предметной области, осуществили обзор существующих универсальных приложений и программных продуктов,
+        в рассматриваемой предметной области, ни одно из существующего ПО не удовлетворяло всем требованиям;&lt;/li&gt;
+      &lt;li&gt;разработан алгоритм работы приложения, на основе алгоритма создано Web-приложение&lt;/li&gt;
+      &lt;li&gt;проработана структура приложения, разбито приложение на модули, каждый из которых выполнял одну из заявленных функций,
+        каждый модуль проверен на правильную работоспособность;&lt;/li&gt;
+      &lt;li&gt;выбран инструментарий, определена среда, в которой создано приложение и язык, на котором написан код приложения, среда
+        разработки Visual Studio 2017, язык программирования С#;&lt;/li&gt;
+      &lt;li&gt;написан основной код приложения и коды всех сопутствующих функций, код проверен;&lt;/li&gt;
+      &lt;li&gt;разработан удобный для пользователя интерфейс приложения, с реализацией многооконного приложения;&lt;/li&gt;
+      &lt;li&gt;разработано руководство пользователя, руководство программиста, обозначены системные требования;&lt;/li&gt;
+      &lt;li&gt;протестировано полученное приложение, приложение работало корректно.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;В дальнейшем возможно улучшение и расширение программы: может быть добавлено администрирование чата. Добавление функции
+      обмена картинками, голосовыми сообщениями. Гибкая настройка профиля пользователя. Добавление других комнат по интересам.
+      Вынесение проекта на интернет ресурс.&lt;/p&gt;
+    &lt;p&gt;Данное приложение может быть доступно для пользователей на любом устройстве, умеющего доступ к интернету.&lt;/p&gt;
+    &lt;p&gt;Цель данной работы полностью достигнута.&lt;/p&gt;
+  &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card class="docs-card" id="4">  <mat-card-header>    <div mat-card-avatar>      <mat-icon color="primary">equalizer</mat-icon>    </div>    <mat-card-title>Multiplayer Game Platform</mat-card-title>    <mat-card-subtitle>      <a routerLink="/docs/4" class="docs-subtitle">Заключение</a>    </mat-card-subtitle>  </mat-card-header>  <mat-card-content>    <p>В результате выполнения проекта было спроектировано и реализовано приложение «Web-чат». В состав приложения входит необходимый      минимум методов и функций, обеспечивающий полноценное функционирование объектов указанного класса. В процессе разработки      приложения все поставленные задачи были выполнены, а именно:</p>    <ul>      <li>проведен анализ предметной области, осуществили обзор существующих универсальных приложений и программных продуктов,        в рассматриваемой предметной области, ни одно из существующего ПО не удовлетворяло всем требованиям;</li>      <li>разработан алгоритм работы приложения, на основе алгоритма создано Web-приложение</li>      <li>проработана структура приложения, разбито приложение на модули, каждый из которых выполнял одну из заявленных функций,        каждый модуль проверен на правильную работоспособность;</li>      <li>выбран инструментарий, определена среда, в которой создано приложение и язык, на котором написан код приложения, среда        разработки Visual Studio 2017, язык программирования С#;</li>      <li>написан основной код приложения и коды всех сопутствующих функций, код проверен;</li>      <li>разработан удобный для пользователя интерфейс приложения, с реализацией многооконного приложения;</li>      <li>разработано руководство пользователя, руководство программиста, обозначены системные требования;</li>      <li>протестировано полученное приложение, приложение работало корректно.</li>    </ul>    <p>В дальнейшем возможно улучшение и расширение программы: может быть добавлено администрирование чата. Добавление функции      обмена картинками, голосовыми сообщениями. Гибкая настройка профиля пользователя. Добавление других комнат по интересам.      Вынесение проекта на интернет ресурс.</p>    <p>Данное приложение может быть доступно для пользователей на любом устройстве, умеющего доступ к интернету.</p>    <p>Цель данной работы полностью достигнута.</p>  </mat-card-content></mat-card></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app'},{'name': 'DocsConclusionComponent', 'selector': 'docs-conclusion'},{'name': 'DocsDevelopmentComponent', 'selector': 'docs-development'},{'name': 'DocsIntroductionComponent', 'selector': 'docs-introduction'},{'name': 'DocsOverviewComponent', 'selector': 'docs-overview'},{'name': 'DocsReferencesComponent', 'selector': 'docs-references'},{'name': 'DocsRootComponent', 'selector': 'docs-root'},{'name': 'DocsTheoryComponent', 'selector': 'docs-theory'},{'name': 'MainRootComponent', 'selector': 'main-root'},{'name': 'MainScrollToTopComponent', 'selector': 'main-scroll-to-top'},{'name': 'MainSidenavComponent', 'selector': 'main-sidenav'},{'name': 'MainSidenavContentComponent', 'selector': 'main-sidenav-content'},{'name': 'SpecActionComponent', 'selector': 'spec-action'},{'name': 'SpecActionTabsComponent', 'selector': 'spec-action-tabs'},{'name': 'SpecChipComponent', 'selector': 'spec-chip'},{'name': 'SpecCodeComponent', 'selector': 'spec-code'},{'name': 'SpecModuleComponent', 'selector': 'spec-module'},{'name': 'SpecRootComponent', 'selector': 'spec-root'},{'name': 'SpecSchemaSelectComponent', 'selector': 'spec-schema-select'},{'name': 'SpecTabErrorComponent', 'selector': 'spec-tab-error'},{'name': 'SpecTabFieldsComponent', 'selector': 'spec-tab-fields'},{'name': 'SpecTabSuccessComponent', 'selector': 'spec-tab-success'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DocsConclusionComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DocsConclusionComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

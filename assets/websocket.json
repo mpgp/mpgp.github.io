@@ -1,0 +1,324 @@
+{
+  "messages": [
+    {
+      "icon": "public",
+      "name": "Main",
+      "description": "The main messages.",
+      "spec": [
+        {
+          "name": "ANY_MESSAGE_FOR_EXAMPLE",
+          "summary": "Here are the basic data of messages.",
+          "description": "A description for some message.",
+          "fields": [
+            {
+              "name": "anyField",
+              "type": "string",
+              "description": "A description for anyField.",
+              "required": true,
+              "validators": [
+                {
+                  "name": "maxLength",
+                  "value": 20
+                },
+                {
+                  "name": "minLength",
+                  "value": 3
+                },
+                {
+                  "name": "pattern",
+                  "value": "^[a-zA-Z 0-9]+$"
+                }
+              ]
+            },
+            {
+              "name": "nonRequiredField",
+              "type": "number",
+              "description": "A description for nonRequiredField.",
+              "required": false,
+              "validators": [
+                {
+                  "name": "maxValue",
+                  "value": 100
+                },
+                {
+                  "name": "minValue",
+                  "value": 0
+                }
+              ]
+            }
+          ],
+          "clientMessage": {
+            "type": "ANY_MESSAGE_FOR_EXAMPLE",
+            "payload": {
+              "anyField": "Any Value",
+              "nonRequiredField": 42
+            }
+          },
+          "serverMessage": {
+            "success": {
+              "description": "Some success message.",
+              "data": {
+                "type": "ANY_MESSAGE_FOR_EXAMPLE",
+                "payload": {
+                  "anyServerData": "hello"
+                }
+              }
+            },
+            "errors": [
+              {
+                "description": "If the message type isn't registered.",
+                "data": {
+                  "type": "MESSAGE",
+                  "error": {
+                    "errorCode": 400,
+                    "message": "Bad request"
+                  }
+                }
+              },
+              {
+                "description": "If you isn't authorized yet.",
+                "data": {
+                  "type": "ANY_MESSAGE_FOR_EXAMPLE",
+                  "error": {
+                    "errorCode": 401,
+                    "message": "Unauthorized"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "AUTH_MESSAGE",
+          "summary": "Authorize a exists account.",
+          "description": "Before authorized you must register an account.",
+          "fields": [
+            {
+              "name": "authToken",
+              "type": "string",
+              "description": "It's your auth token, which can be obtained at registration / authorization with Rest API.",
+              "required": true,
+              "validators": [
+                {
+                  "name": "length",
+                  "value": 64
+                },
+                {
+                  "name": "pattern",
+                  "value": "^[a-z0-9]+$"
+                }
+              ]
+            }
+          ],
+          "clientMessage": {
+            "type": "AUTH_MESSAGE",
+            "payload": {
+              "authToken": "5b8a928bce9341d415498b968ebf48e6"
+            }
+          },
+          "serverMessage": {
+            "success": {
+              "description": "",
+              "data": {
+                "type": "AUTH_MESSAGE",
+                "payload": {
+                  "usersList": [
+                    {
+                      "accountId": 4,
+                      "avatar": "21.jpg",
+                      "lastOnline": "2018-07-08T14:59:51.657256",
+                      "nickname": "admin2018",
+                      "registerDate": "2018-07-01T12:17:28.825984"
+                    }
+                  ]
+                }
+              }
+            },
+            "errors": [
+              {
+                "description": "If the auth token isn't valid.",
+                "data": {
+                  "type": "AUTH_MESSAGE",
+                  "error": {
+                    "errorCode": 404,
+                    "message": "NotFound"
+                  }
+                }
+              },
+              {
+                "description": "If you already connected.",
+                "data": {
+                  "type": "ANY_MESSAGE_FOR_EXAMPLE",
+                  "error": {
+                    "errorCode": 409,
+                    "message": "ALREADY_CONNECTED"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "icon": "comment",
+      "name": "Communication",
+      "description": "The communication messages.",
+      "spec": [
+        {
+          "name": "CHAT_MESSAGE",
+          "summary": "Send message to all users in main room.",
+          "description": "",
+          "fields": [
+            {
+              "name": "message",
+              "type": "string",
+              "description": "",
+              "required": true,
+              "validators": [
+                {
+                  "name": "maxLength",
+                  "value": 249
+                },
+                {
+                  "name": "minLength",
+                  "value": 1
+                }
+              ]
+            }
+          ],
+          "clientMessage": {
+            "type": "CHAT_MESSAGE",
+            "payload": {
+              "message": "Hello World"
+            }
+          },
+          "serverMessage": {
+            "success": {
+              "description": "",
+              "data": {
+                "type": "CHAT_MESSAGE",
+                "payload": {
+                  "sender": 4,
+                  "message": "Hello!",
+                  "time": 1531046841
+                }
+              }
+            },
+            "errors": [
+              {
+                "description": "If don't pass validators for message field.",
+                "data": {
+                  "type": "CHAT_MESSAGE",
+                  "error": {
+                    "errorCode": 400,
+                    "message": "Bad request"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "DIALOG_MESSAGE",
+          "summary": "Send private message to specific user.",
+          "description": "The server sends this message to receiver and sender.",
+          "fields": [
+            {
+              "name": "message",
+              "type": "string",
+              "description": "",
+              "required": true,
+              "validators": [
+                {
+                  "name": "maxLength",
+                  "value": 249
+                },
+                {
+                  "name": "minLength",
+                  "value": 1
+                }
+              ]
+            },
+            {
+              "name": "receiver",
+              "type": "number",
+              "description": "The id of receiver.",
+              "required": true,
+              "validators": []
+            }
+          ],
+          "clientMessage": {
+            "type": "DIALOG_MESSAGE",
+            "payload": {
+              "message": "Hello Admin!",
+              "receiver": 1
+            }
+          },
+          "serverMessage": {
+            "success": {
+              "description": "",
+              "data": {
+                "type": "DIALOG_MESSAGE",
+                "payload": {
+                  "message": "Hello Admin!",
+                  "receiver": 1,
+                  "sender": 2
+                }
+              }
+            },
+            "errors": [
+              {
+                "description": "If don't pass validators for message field.",
+                "data": {
+                  "type": "DIALOG_MESSAGE",
+                  "error": {
+                    "errorCode": 400,
+                    "message": "Bad request"
+                  }
+                }
+              },
+              {
+                "description": "If receiver isn't found.",
+                "data": {
+                  "type": "DIALOG_MESSAGE",
+                  "error": {
+                    "errorCode": 404,
+                    "message": "NotFound"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "icon": "notifications",
+      "name": "Notification",
+      "description": "The notification messages.",
+      "spec": [
+        {
+          "name": "USER_CONNECTION_MESSAGE",
+          "summary": "Send message to all users in main room.",
+          "description": "The server sends this message if user connect or disconnect to server.",
+          "fields": [],
+          "clientMessage": {},
+          "serverMessage": {
+            "success": {
+              "description": "The field status can contain 2 values: 'CONNECT' and 'DISCONNECT'.",
+              "data": {
+                "type": "USER_CONNECTION_MESSAGE",
+                "payload": {
+                  "sender": 1,
+                  "status": "DISCONNECT"
+                }
+              }
+            },
+            "errors": []
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+sudo: required
+language: node_js
+node_js:
+  - stable
+addons:
+  chrome: stable
+cache:
+  yarn: true
+  directories:
+    - node_modules
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+
+env:
+  global:
+    - BRANCH=$TRAVIS_BRANCH
+    - GITHUB_REPO_OWNER=mpgp
+    - GITHUB_REPO_NAME=mpgp.github.io
+    - GITLAB_REPO_OWNER=mpgp
+    - GITLAB_REPO_NAME=mpgp.github.io
+    - DOCKER_IMAGE_OWNER=mpgp129
+    - DOCKER_IMAGE_NAME=mpgpspec
+
+before_install:
+  - bash scripts/bash_runner.sh scripts/ci/1_before_install.sh
+
+install:
+  - bash scripts/bash_runner.sh scripts/ci/2_install.sh
+
+before_script:
+  - bash scripts/bash_runner.sh scripts/ci/3_before_script.sh
+
+script:
+  - bash scripts/bash_runner.sh scripts/ci/4_script.sh
+
+deploy:
+  - on:
+      branch: "master"
+    provider: script
+    skip_cleanup: true
+    script:
+      - bash scripts/bash_runner.sh scripts/ci/5_deploy.sh
+
+# Deploy dist folder to master(gh-pages) branch
+# https://github.com/settings/tokens
+  - on:
+      branch: "master"
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: dist
+    target-branch: gh-pages
+    email: torvalds@linux-foundation.org
+    name: Linus Torvalds
