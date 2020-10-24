@@ -9,5 +9,5 @@ import { ServerMessageResponse } from '../../models/server-message-response';
   templateUrl: './spec-tab-error.component.html',
 })
 export class SpecTabErrorComponent {
-  @Input() errors: ServerMessageResponse[];
+  @Input() errors!: ServerMessageResponse[];
 }

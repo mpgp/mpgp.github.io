@@ -14,6 +14,7 @@ export class CacheService {
   private readonly inFlightObservables = new Map<string, Subject<any>>();
   /* tslint:enable:no-any */
   public static readonly cacheTime = 300000;
+  public static readonly errorMsg = 'Requested key is not available in Cache';
   private static instanceValue: CacheService;
 
   public static get instance(): CacheService {
@@ -22,7 +23,13 @@ export class CacheService {
 
   public get<T>(key: string, fallback?: Observable<T>, cacheTime: number = CacheService.cacheTime): Observable<T> {
     if (this.hasValidCachedValue(key)) {
-      return of(this.cache.get(key).value) as Observable<T>;
+      const cache = this.cache.get(key);
+
+      if (!cache) {
+        return throwError(CacheService.errorMsg);
+      }
+
+      return of(cache.value) as Observable<T>;
     }
 
     if (this.inFlightObservables.has(key)) {
@@ -35,7 +42,7 @@ export class CacheService {
       return fallback.pipe(tap(value => this.set(key, value, cacheTime)));
     }
 
-    return throwError('Requested key is not available in Cache');
+    return throwError(CacheService.errorMsg);
   }
 
   public has(key: string): boolean {
@@ -50,6 +57,11 @@ export class CacheService {
   private notifyInFlightObservers<T>(key: string, value: T): void {
     if (this.inFlightObservables.has(key)) {
       const inFlight = this.inFlightObservables.get(key);
+
+      if (!inFlight) {
+        return;
+      }
+
       const observersCount = inFlight.observers.length;
 
       if (observersCount) {
@@ -62,17 +74,23 @@ export class CacheService {
   }
 
   private hasValidCachedValue(key: string): boolean {
-    if (this.cache.has(key)) {
-      if (this.cache.get(key).expiry < Date.now()) {
-        this.cache.delete(key);
-
-        return false;
-      }
-
-      return true;
+    if (!this.cache.has(key)) {
+      return false;
     }
 
-    return false;
+    const cache = this.cache.get(key);
+
+    if (!cache) {
+      return false;
+    }
+
+    if (cache.expiry < Date.now()) {
+      this.cache.delete(key);
+
+      return false;
+    }
+
+    return true;
   }
 }
 

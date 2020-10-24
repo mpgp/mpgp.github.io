@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'docs' },
-  { path: 'docs', loadChildren: '../features/docs/docs.module#DocsModule' },
-  { path: 'spec', loadChildren: '../features/spec/spec.module#SpecModule' },
+  { path: 'docs', loadChildren: () => import('../features/docs/docs.module').then(m => m.DocsModule) },
+  { path: 'spec', loadChildren: () => import('../features/spec/spec.module').then(m => m.SpecModule) },
   { path: '**', redirectTo: 'docs' },
 ];
 

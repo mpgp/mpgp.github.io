@@ -1,4 +1,4 @@
-<div class="spec-root" *ngIf="route.params | async as params">
+<div class="spec-root" *ngIf="params$ | async as params">
   <spec-schema-select
     (schemaChange)="onNavigate($event, 0, 0, 0)"
     [currentSchema]="params.schema"

@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { browser, logging } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -7,10 +8,16 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display correct title', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText())
-      .toEqual('MPGP Documentation')
-      .catch(e => console.error(e));
+    expect(page.getParagraphText()).toEqual('MPGP Documentation');
+  });
+
+  afterEach(async () => {
+    // Assert that there are no errors emitted from the browser
+    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
+    expect(logs).not.toContain(jasmine.objectContaining({
+      level: logging.Level.SEVERE,
+    } as logging.Entry));
   });
 });

@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEn
   templateUrl: './main-sidenav-content.component.html',
 })
 export class MainSidenavContentComponent {
-  @Input() isHandset: BreakpointState;
+  @Input() isHandset!: BreakpointState;
 
   @Output() toggle = new EventEmitter<boolean>(true);
 

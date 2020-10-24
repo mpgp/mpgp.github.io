@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { MessageVerb } from '~/app/features/spec/models/message-spec';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -8,7 +9,7 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
   templateUrl: './spec-chip.component.html',
 })
 export class SpecChipComponent {
-  @Input() verb: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD';
+  @Input() verb!: MessageVerb;
 
   get isAccent(): boolean {
     return ['PATCH', 'PUT'].includes(this.verb);

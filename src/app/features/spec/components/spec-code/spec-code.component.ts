@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
   templateUrl: './spec-code.component.html',
 })
 export class SpecCodeComponent {
-  @Input() jsonData: object;
+  @Input() jsonData!: object;
 
   get hasData(): boolean {
     return Object.keys(this.jsonData || {}).length > 0;

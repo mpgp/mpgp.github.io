@@ -25,12 +25,12 @@ export class DocsRootComponent implements AfterViewInit, OnDestroy {
         filter(element => !!element),
       )
       .subscribe(element => {
-        element.scrollIntoView();
+        element?.scrollIntoView();
 
         if (this.isFirstScroll) {
           this.isFirstScroll = false;
           this.ngZone.runOutsideAngular(() => {
-            setTimeout(() => element.scrollIntoView(), 500);
+            setTimeout(() => element?.scrollIntoView(), 500);
           });
         }
       });

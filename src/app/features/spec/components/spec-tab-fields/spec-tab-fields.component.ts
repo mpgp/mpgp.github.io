@@ -10,5 +10,5 @@ import { Field } from '../../models/field';
   templateUrl: './spec-tab-fields.component.html',
 })
 export class SpecTabFieldsComponent {
-  @Input() fields: Field[];
+  @Input() fields!: Field[];
 }

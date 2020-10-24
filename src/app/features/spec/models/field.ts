@@ -7,7 +7,7 @@ export class Field {
   type: string;
   validators: FieldValidator[];
 
-  constructor(json: Field = null) {
+  constructor(json?: Field) {
     if (json) {
       this.description = json.description || '';
       this.name = json.name || '';

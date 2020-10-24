@@ -1,6 +1,8 @@
 import { Field } from './field';
 import { ServerMessage } from './server-message';
 
+export type MessageVerb = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD' | '';
+
 export class MessageSpec {
   clientMessage: object;
   description: string;
@@ -8,9 +10,9 @@ export class MessageSpec {
   name: string;
   serverMessage: ServerMessage;
   summary: string;
-  verb?: string;
+  verb: MessageVerb;
 
-  constructor(json: MessageSpec = null) {
+  constructor(json?: MessageSpec) {
     if (json) {
       this.description = json.description || '';
       this.fields = (json.fields && json.fields.map(x => new Field(x))) || [new Field()];
@@ -18,12 +20,13 @@ export class MessageSpec {
       this.summary = json.summary || '';
       this.clientMessage = json.clientMessage || {};
       this.serverMessage = (json.serverMessage && new ServerMessage(json.serverMessage)) || new ServerMessage();
-      this.verb = json.verb || null;
+      this.verb = json.verb || '';
     } else {
       this.description = 'A description for some message.';
       this.fields = [new Field()];
       this.name = 'ANY_MESSAGE_FOR_EXAMPLE';
       this.summary = 'Here are the basic data of messages.';
+      this.verb = '';
       this.clientMessage = {
         payload: {
           anyField: 'Any Value',

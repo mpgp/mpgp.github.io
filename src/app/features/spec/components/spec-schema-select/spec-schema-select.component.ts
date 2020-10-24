@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEn
   templateUrl: './spec-schema-select.component.html',
 })
 export class SpecSchemaSelectComponent {
-  @Input() currentSchema: string;
+  @Input() currentSchema!: string;
 
   @Output() schemaChange = new EventEmitter<string>();
 

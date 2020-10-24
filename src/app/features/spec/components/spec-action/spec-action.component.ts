@@ -10,8 +10,8 @@ import { Message } from '../../models/message';
   templateUrl: './spec-action.component.html',
 })
 export class SpecActionComponent {
-  @Input() message: Message;
-  @Input() params: NavigateEvent;
+  @Input() message!: Message;
+  @Input() params!: NavigateEvent;
 
   @Output() navigate = new EventEmitter<NavigateEvent>();
 

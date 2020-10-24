@@ -4,7 +4,7 @@ export class ServerMessage {
   errors: ServerMessageResponse[];
   success: ServerMessageResponse;
 
-  constructor(json: ServerMessage = null) {
+  constructor(json?: ServerMessage) {
     const errors = [
       {
         data: {
@@ -16,6 +16,7 @@ export class ServerMessage {
           type: 'MESSAGE',
         },
         description: "If the message type isn't registered.",
+        status: null,
       },
       {
         data: {
@@ -27,6 +28,7 @@ export class ServerMessage {
           type: 'ANY_MESSAGE_FOR_EXAMPLE',
         },
         description: "If you isn't authorized yet.",
+        status: null,
       },
     ];
 

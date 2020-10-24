@@ -9,5 +9,5 @@ import { ServerMessageResponse } from '../../models/server-message-response';
   templateUrl: './spec-tab-success.component.html',
 })
 export class SpecTabSuccessComponent {
-  @Input() response: ServerMessageResponse;
+  @Input() response!: ServerMessageResponse;
 }
