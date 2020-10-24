@@ -110,7 +110,8 @@
     "static": "static ./dist",
     "test": "echo Please use yarn run test:unit",
     "test:unit": "ng test",
-    "ci:test": "ng test --watch=false --code-coverage",
+    "test:e2e": "ng e2e",
+    "ci:test": "ng test --watch=false --code-coverage --browsers=ChromeHeadless",
     "ci:e2e": "CHROME_BIN=chromium-browser DISPLAY=:99.0 ng e2e"
   },
   "dependencies": {
