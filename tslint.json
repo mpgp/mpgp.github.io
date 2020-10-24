@@ -143,8 +143,6 @@
     "no-trailing-whitespace": true,
     "no-unnecessary-initializer": true,
     "no-unused-expression": true,
-    "no-unused-variable": true,
-    "no-use-before-declare": true,
     "no-var-keyword": true,
     "object-literal-sort-keys": [
       true,
@@ -214,11 +212,8 @@
       }
     ],
     "unified-signatures": true,
-    "use-host-property-decorator": true,
-    "use-input-property-decorator": true,
     "use-isnan": true,
     "use-life-cycle-interface": true,
-    "use-output-property-decorator": true,
     "use-pipe-transform-interface": true,
     "variable-name": [
       true,
