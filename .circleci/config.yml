@@ -39,10 +39,6 @@ jobs:
           command: yarn install --frozen-lockfile
 
       - run:
-          name: yarn run lint:css:all
-          command: yarn run lint:css:all
-
-      - run:
           name: yarn run lint:scss:all
           command: yarn run lint:scss:all
 
