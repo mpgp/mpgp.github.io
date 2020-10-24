@@ -2,6 +2,7 @@ COMMANDS_TO_RUN+=('echo 5_deploy.sh ...')
 
 COMMANDS_TO_RUN+=('echo Copy ci files for prevent errors when deploying')
 COMMANDS_TO_RUN+=('cp .travis.yml ./dist')
+COMMANDS_TO_RUN+=('cp package.json ./dist')
 COMMANDS_TO_RUN+=('cp -r .circleci ./dist')
 
 COMMANDS_TO_RUN+=('npx semantic-release --branch $BRANCH')
