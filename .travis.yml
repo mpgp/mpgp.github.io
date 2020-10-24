@@ -10,7 +10,7 @@ cache:
     - node_modules
 branches:
   only:
-    - src
+    - master
     - /^greenkeeper/.*$/
 
 env:
@@ -37,7 +37,7 @@ script:
 
 deploy:
   - on:
-      branch: "src"
+      branch: "master"
     provider: script
     skip_cleanup: true
     script:
@@ -46,11 +46,11 @@ deploy:
 # Deploy dist folder to master(gh-pages) branch
 # https://github.com/settings/tokens
   - on:
-      branch: "src"
+      branch: "master"
     provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
     local_dir: dist
-    target-branch: master
+    target-branch: gh-pages
     email: torvalds@linux-foundation.org
     name: Linus Torvalds
